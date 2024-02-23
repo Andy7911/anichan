@@ -1,0 +1,126 @@
+body {
+  background-color: #171717;
+}
+
+.home-page .container {
+  min-height: 1000px;
+  max-width: 1400px;
+  overflow-x: hidden;
+}
+.home-page .animes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.home-page .animes__audioPlayer {
+  z-index: -2;
+  visibility: hidden;
+  position: absolute;
+}
+.home-page .animes__thumbnail {
+  width: calc(30% - 12px);
+  margin-left: 20px;
+  margin-bottom: 15px;
+  height: auto;
+  background-size: cover;
+  z-index: 10;
+}
+.home-page .animes__thumbnail img {
+  width: 100%;
+  height: auto;
+}
+.home-page .container {
+  position: relative;
+}
+.home-page .banner {
+  display: none;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: -800px;
+  background-color: #000;
+  border: 10px solid #fff;
+  border-radius: 10px;
+  height: 800px;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.home-page .banner__gif {
+  position: absolute;
+  opacity: 0.15;
+}
+.home-page .banner__inside {
+  position: relative;
+  border-radius: 10px 0px 0px 10px;
+  width: 750px;
+  border: 10px solid #fff;
+  height: 90%;
+  padding: 20px;
+  border-right: none;
+  overflow-y: hidden;
+}
+.home-page .banner__inside p {
+  color: white;
+  font-size: 25px;
+  font-weight: 300;
+  width: 90%;
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  font-family: "Oxygen", sans-serif;
+  font-family: "Share Tech", sans-serif;
+  line-height: 1.5;
+}
+.home-page .banner__icon_close {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.home-page .banner__img_title {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 20px;
+  opacity: 0;
+}
+.home-page .banner__img_bottom {
+  position: relative;
+  width: 300px;
+  height: auto;
+  left: 10px;
+  bottom: -350px;
+}
+.home-page .banner__bottom {
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-page .banner__bottom .btn {
+  background-color: rgb(56, 216, 50);
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.4);
+}
+.home-page .banner__bottom .btn__icon {
+  display: flex;
+  margin-left: 10px;
+  width: 26px;
+  height: auto;
+}
+.home-page .banner__bottom .btn__icon img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=index.css.map */

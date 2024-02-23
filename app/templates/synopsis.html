@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main class="page-synopsis">
+    <div class="container">
+        <div class="synopsis_intro">
+            <img class="synopsis_intro__bg"
+                src="../static/img/aniyuki-tokyo-revengers.avif">
+            <div class="synopsis_intro__top">
+                <img src="../static/img/title-tokyo.png" width="300"
+                    height="200" />
+                <span class="synopsis_intro__score"> 4.8 </span>
+            </div>
+            <div class="synopsis_intro__content">
+                <img
+                    src="../static/img/tokyo_revengers_f0vnb4-375w-2x.png" alt
+                    width="300" srcset> <img src alt>
+            </div>
+            <div class="synopsis">
+                <div class="synopsis__top">
+                    <img src="../static/img/piece-of-paper 2.svg">
+                </div>
+
+                <div class="tabs-container">
+                    <div class="wrap">
+                        <div class="spacer">
+
+                        </div>
+                        <div class="tabs">
+                            <button onclick="showTab('tab1')">Synopsis</button>
+                            <button onclick="showTab('tab2')">Scan</button>
+                            <button onclick="showTab('tab3')">Season</button>
+                        </div>
+                    </div>
+                    <div class="pages">
+                        <div class="pages__tab-content" id="tab1">
+                            <!-- Contenu de l'onglet 1 -->
+                            <div class="pages__synopsis_content">
+                            <div class="pages__synopsis_left">
+                          <img src="" alt="" srcset="">
+                            </div>
+                            <div class="pages__synopsis_right">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis alias dignissimos blanditiis animi, neque ducimus id aliquam doloremque omnis iste unde odio explicabo. Doloribus ipsum quod numquam molestias placeat? Quis.</p>
+
+                            </div>
+                        </div>
+                        </div>
+                        <div class="pages__tab-content" id="tab2">
+                            <!-- Contenu de l'onglet 2 -->
+                            <h2>Episode</h2>
+                            <p>Contenu de l'onglet 2...</p>
+                        </div>
+                        <div class="pages__tab-content" id="tab3">
+                            <!-- Contenu de l'onglet 3 -->
+                            <div class="pages__season_wrap">
+                                <div class="pages__card_container">
+                                    <div class="pages__anime_card_season">
+                                        <img
+                                            src="../static/img/saison_1 tokyo.jpeg">
+                                        <h3> Saison 1</h3>
+                                    </div>
+                                    <div class="pages__anime_card_season">
+                                        <img
+                                            src="../static/img/saison_1 tokyo.jpeg">
+                                        <h3> Saison 2 </h3>
+                                    </div>
+                                </div>
+                                <div class="pages__episode_container">
+                                    <div class="pages__episode_thumbnail">
+                                        <img class="pages__episode_thumbnail"
+                                            src="../static/img/thumbnail-tokyo.png"
+                                            alt="thumbnail" srcset>
+                                        <span>Ep 1</span>
+                                    </div>
+                                    <div class="pages__episode_thumbnail">
+                                        <img class="pages__episode_thumbnail"
+                                            src="../static/img/thumbnail-tokyo.png"
+                                            alt="thumbnail" srcset>
+                                        <span>Ep 1</span>
+                                    </div>
+                                    <div class="pages__episode_thumbnail">
+                                        <img class="pages__episode_thumbnail"
+                                            src="../static/img/thumbnail-tokyo.png"
+                                            alt="thumbnail" srcset>
+                                        <span>Ep 2</span>
+                                    </div>
+                                    <div class="pages__episode_thumbnail">
+                                        <img class="pages__episode_thumbnail"
+                                            src="../static/img/thumbnail-tokyo.png"
+                                            alt="thumbnail" srcset>
+                                        <span>Ep 3</span>
+                                    </div>
+                                    <div class="pages__episode_thumbnail">
+                                        <img class="pages__episode_thumbnail"
+                                            src="../static/img/thumbnail-tokyo.png"
+                                            alt="thumbnail" srcset>
+                                        <span>Ep 3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

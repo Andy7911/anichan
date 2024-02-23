@@ -1,0 +1,46 @@
+.watch-page{
+
+    h1{
+        color:white;
+    }
+    .video_container{
+        padding: 20px 0px;
+        width: 100%;
+        height: auto;
+        margin: auto;
+        iframe{
+            width: 100%;
+            margin: auto;
+        }
+    }
+    .dropdown{
+
+        select{
+            border: none;
+            height: 30px;
+            width: 140px;
+        }
+    }
+    .btn_container{
+        display: flex;
+        justify-content: center;
+        background-color: #201F2D;
+        padding: 10px 5px;
+        button{
+            padding:5px 10px ;
+            border: none;
+            background-color: $secondaryColor ;
+            color: #fff;
+            margin-right: 20px;
+            font-size: 25px;
+            font-weight: 700;
+            border-radius: 5px;
+            &:nth-child(2){
+                background-color: #000;
+             
+            }
+            
+        }
+    }
+
+}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main class="watch-page">
+<div class="container">
+    <h1>Watching view</h1>
+
+    <div class="dropdown">
+        <select class="dropdown__select">
+            <option value="Episode-1"> Episode 1</option>
+        </select>
+        <select class="dropdown__select">
+            <option value="Lecteur-1"> Lecteur 2</option>
+        </select>
+    </div>
+    <div class="video_container" >
+        <iframe width="640" height="384" src="https://video.sibnet.ru/shell.php?videoid=5426266" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </div>
+    <div class="btn_container">
+        <button><i class="fa-solid fa-circle-arrow-left"></i> Precedent</button> <button> <i class="fa-solid fa-circle-arrow-down"></i> Dernier episode </button> <button> Suivant <i class="fa-solid fa-circle-arrow-right"></i></button>
+    </div>
+</div>
+
+</main>
+{% endblock %}

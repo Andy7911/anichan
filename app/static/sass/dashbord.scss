@@ -1,0 +1,57 @@
+.dashboard{
+    h2{
+        font-weight: 700;
+    }
+    input{
+        height: 25px;
+        border-radius:4px;
+        border: 1px solid black;
+    }
+.tabs-container{
+    display: flex;
+
+
+}
+.dropzone{
+border: 1px dotted  black;
+margin-bottom: 10px;
+
+}
+.tabs{
+    display: flex;
+flex-direction: column;
+width: 30%;
+
+button{
+flex: 1;
+background-color: #fff;
+border: 1px solid #cacaca
+}
+
+
+}
+.pages{
+ width: 70%;
+    padding: 50px 100px;
+    background-color: #fff;
+}
+
+.white_box{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+ 
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -4px rgba(0,0,0,0.78);
+    .dropzone{
+       width: calc(45% - 12px);
+    }
+}
+.manage{
+    &__head{
+
+    }
+}
+}
