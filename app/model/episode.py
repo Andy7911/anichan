@@ -12,5 +12,6 @@ class Episode(Base):
    episode_id = Column(Integer,primary_key=True)
    title = Column(String, nullable=False)
    description = Column(String,nullable=False)
+   thumbnail = Column(String,nullable=False)
    anime_id = Column(Integer, ForeignKey('anime.anime_id'))
  

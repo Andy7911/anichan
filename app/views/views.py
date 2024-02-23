@@ -23,3 +23,7 @@ def watch():
 @blueprint.route('/synopsis')
 def synopsie():
     return render_template('synopsis.html')
+
+@blueprint.route('/admin')
+def admin():
+    return render_template('admin.html')
