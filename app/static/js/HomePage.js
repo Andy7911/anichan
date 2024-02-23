@@ -50,6 +50,17 @@ var data =[{
     "image_buttom":"../static/img/psycho-padd-bottom.png",
 
 
+},
+{
+    "id":4,
+    "thumbnail":"../static/img/made_in_abyss_thumb.jpeg",
+    "title_img":"../static/img/made_logo.webp",
+    "text":"La cité entoure un étrange et immense gouffre, communément appelé « l’Abysse ». L’Abysse recèle des artefacts et des vestiges d’une ancienne civilisation disparue, et est de fait un lieu prisé par les caverniers pour l’excavation de ces objets pouvant être vendus à l’étranger.",
+    "image_gif":"../static/img/MadeInAbyssAMV-HanezeveCaradhina-ezgif.com-optimize.gif",
+    'audio':'../static/img/Made-in-abyss.MP3',
+    "image_buttom":"../static/img/reg_official.png",
+
+
 }
 
 ]    
