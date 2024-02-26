@@ -32,6 +32,7 @@
             border-radius: 0px 0px 0px 15px;
             padding: 6px 15px;
             display: flex;
+          
         }
 
     }
@@ -55,11 +56,13 @@
         flex-direction: column;
      }
         h4{
+            font-family:$shareTech;
             color: #fff;
             font-size: 30px;
             margin: 0;
         }
         h2{
+            font-family:$shareTech;
             color: #fff;
             font-size: 50px;
             margin: 0;
@@ -98,6 +101,7 @@
                 }
             }
             p{
+                font-family: $oswald;
                 color: #fff;
                 font-size: 20px;
                 width: 80%;
@@ -114,7 +118,9 @@
             display: flex;
             span{
                 color: #fff;
+               
             }
+           
         }
         &__stars{
             i{
@@ -125,6 +131,8 @@
             strong{
                 font-size: 40px;
                 color: #fff;
+                font-family: $oswald; 
+
             }
         }
         &__right {
@@ -162,6 +170,7 @@
             border-radius: 15px;
             border: 1px solid #FAF8FF;
             padding: 10px 17px;
+            font-family: $oswald;
 
         }
 

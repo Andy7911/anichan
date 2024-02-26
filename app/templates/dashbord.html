@@ -14,91 +14,21 @@
         </section>
         </div> -->
 <main class="dashboard">
-    <div class="tabs-container">
-        <div class="tabs">
-            <button onclick="showTab('tab1')">Anime</button>
-            <button onclick="showTab('tab2')">Episode</button>
-            <button onclick="showTab('tab3')">Liste animes</button>
-        </div>
-        <div class="pages">
-            <div class="pages__tab-content" id="tab1">
-                <!-- Contenu de l'onglet 1 -->
-                <h2>Anime</h2>
+    <div class="sidemenu">
 
-                <form>
-                    <div class="row">
-                        <div class="input-form">
-                            <label for="name">Title:</label>
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-form">
-                            <label for="name">Description:</label>
-                            <textarea class="aria_form"
-                                placeholder="Write the description here ..."></textarea>
-                        </div>
-                    </div>
-                    <h2>Image:</h2>
-                    <div class="white_box">
-                        <div class="dropzone" id="imageDropzone">
-                            <div class="dz-message" data-dz-message>
-                                <span>Drop
-                                    images gif here or click to
-                                    upload.
-                                </span>
-                            </div>
-                        </div>
-                    
-                        <div class="dropzone" id="ImageDropzone">
-                            <div class="dz-message" data-dz-message><span>Drop
-                                    Image Button here or click to upload.</span></div>
-                        </div>
-
-                    </div>
-                </form>
-                <h2>Media:</h2>
-                <div class="white_box">
-                    <!-- Dropzone for Music -->
-                    <div class="dropzone" id="musicDropzone">
-                        <div class="dz-message" data-dz-message><span>Drop
-                                music files here or click to
-                                upload.</span></div>
-                    </div>
-                    <div class="dropzone" id="imageDropzone">
-                        <div class="dz-message" data-dz-message>
-                            <span>Drop
-                                images gif here or click to
-                                upload.
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <h1>Debug output:</h1>
-                <pre id="output"></pre>
+    </div>
+    <div class="dashboard">
+        <div class="dashboard__top">
+            <div class="dashboard__card">
+                <i class="fa-solid fa-eye"></i>
+                <span>85view</span>
             </div>
-            <div class="pages__tab-content" id="tab2">
-                <!-- Contenu de l'onglet 2 -->
-                <h2>Episode</h2>
-                <p>Contenu de l'onglet 2...</p>
-            </div>
-            <div class="pages__tab-content" id="tab3">
-                <!-- Contenu de l'onglet 3 -->
-                <h2>Onglet 3</h2>
-                <p>Contenu de l'onglet 3...</p>
-                <div class="manage">
-                    
-                    <div class="manage__head">
-                        <h2>Manage anime</h2>
-                    </div>
-                    <div class="manage__item">
-                    <input type="checkbox">
-                    <span>Tokyo revenger</span>
-                    </div>
-
-                </div>
+            <div class="dashboard__card">
+                <i class="fa-solid fa-eye"></i>
+                <span>85view</span>
             </div>
         </div>
+
     </div>
 </main>
 {% endblock %}

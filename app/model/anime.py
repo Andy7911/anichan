@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Sequence
+from sqlalchemy import create_engine, Column, Integer, String, Sequence,ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -13,8 +13,8 @@ class Anime(Base):
    title = Column(String, nullable=False)
    description = Column(String,nullable=False)
    genre = Column(String(50),nullable=False)
-   image_title= Column(String,nullable=True)
-   image_gif=Column(String, nullable=True)
-   image_bottom= Column(String,nullable=True)
-   audio = Column(String,nullable=True)
+   image = Column(Integer,ForeignKey('images.image_id'))
+
+
+  
  

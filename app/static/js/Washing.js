@@ -2,8 +2,9 @@
 
 export default class Watching {
 
-constructor(){
-    console.log('watching page')
-}
+    constructor() {
+        console.log('watching page')
+    }
+
 
 }
