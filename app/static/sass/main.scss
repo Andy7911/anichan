@@ -12,6 +12,24 @@ body{
     flex-direction: column;
     flex:1
 }
+
+.input-full{
+
+    width: 100%;
+    &__field{
+        border: 1px solid #cacaca;
+        height: 40px;
+        border-radius: 5px;
+    }
+    &__text_aria{
+        height: 100px;
+        resize: none;
+    }
+}
+.input-half {
+
+    width: calc(50% - 11px) ;
+}
 .container {
     min-height: 1000px;
     max-width: 1400px;

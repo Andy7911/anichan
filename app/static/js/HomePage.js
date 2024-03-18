@@ -104,7 +104,7 @@ import swiper from 'swiper';
     }
     //Démarre la bannière lorsque qu'on click sur un thumbnail
     startbanner(thumb,i){
-debugger;
+
         for(let i=0; i < this.thumbnail.length;i++){
            
             if(this.thumbnail[i].classList.contains('active')){

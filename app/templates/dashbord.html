@@ -1,34 +1,143 @@
 {% extends 'layout-dashbord.html' %}
 {% block content %}
-<!-- <div class="dashbord">
-        <section>
-<div class="sidebar">
-    <ul>
-        <li>Anime</li>
-        <li>Episode</li>
-        <li>Music</li>
-        <li>Video</li>
-        <li>Image</li>
-    </ul>
-</div>
-        </section>
-        </div> -->
-<main class="dashboard">
-    <div class="sidemenu">
+    <!-- =============== Navigation ================ -->
+    <main class="dashboard">
 
-    </div>
-    <div class="dashboard">
-        <div class="dashboard__top">
-            <div class="dashboard__card">
-                <i class="fa-solid fa-eye"></i>
-                <span>85view</span>
-            </div>
-            <div class="dashboard__card">
-                <i class="fa-solid fa-eye"></i>
-                <span>85view</span>
-            </div>
-        </div>
+        <!-- ========================= Main ==================== -->
+       
+         
 
-    </div>
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Daily Views</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Sales</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Comments</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Earning</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Ajouter recemment</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Genre</td>
+                                <td>Last episode</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Demon slave</td>
+                                <td>Echi action</td>
+                                <td>Episode 24</td>
+                                <td><span class="status delivered">In progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Dell Laptop</td>
+                                <td>$110</td>
+                                <td>Due</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Frieren journey</td>
+                                <td>Fantasy aventure</td>
+                                <td>Episode 23</td>
+                                <td><span class="status return">Finish</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Addidas Shoes</td>
+                                <td>$620</td>
+                                <td>Due</td>
+                                <td><span class="status inProgress">In Progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Star Refrigerator</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Dell Laptop</td>
+                                <td>$110</td>
+                                <td>Due</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Apple Watch</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status return">Return</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Addidas Shoes</td>
+                                <td>$620</td>
+                                <td>Due</td>
+                                <td><span class="status inProgress">In Progress</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        
+   
 </main>
 {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{% extends 'layout-dashbord.html' %}
+{% block content %}
+<main class="anime">
+    <form class="form">
+        <div class="input-form">
+            <label>Title</label>
+            <input class="input-full__field" placeholder="Enter Anime title">
+        </div>
+        <div class="input-form">
+            <label>description</label>
+            <textarea class="input-full__text_aria" placeholder="Enter Anime title"></textarea>
+        </div>
+        <div class="anime_input_box">
+            <label>Genre</label>
+            <select name="chosen-select" id="chosen-select" data-placeholder="Choose tags ..." name="tags[]" multiple >
+                <option value="1">Fantasy </option>
+                <option value="2">Action </option>
+                <option value="3">Comedie</option>
+                <option value="4">Aventure</option>
+                <option value="5">Drame</option>
+                <option value="6">Romance</option>
+                <option value="7">Josei</option>
+                <option value="8">Isekai</option>
+                <option value="9">Tranche de vie</option>
+            </select>
+        </div>
+<span id="output"></span>       
+ <div id="imageDropzone" class="dropzone">
+            <div class="dz-message" data-dz-message>
+                <span>
+                    Drop images gif here or click to upload.
+                </span>
+            </div>
+
+        </div>
+
+    </form>
+
+</main>
+{% endblock %}

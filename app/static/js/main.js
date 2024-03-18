@@ -4,6 +4,7 @@ import Dashboard from './Dashbord';
 import HomePage from './HomePage';
 import Watching from './Washing';
 import Synopsis from './Synopsis';
+import Anime from './Anime';
 
 class Main {
     constructor() {
@@ -13,7 +14,7 @@ class Main {
     initElements() {
 
         // Récupérer tous les éléments avec des classes spécifiques
-        const elements = document.querySelectorAll('.home-page, .dashboard, .watch-page, .page-synopsis');
+        const elements = document.querySelectorAll('.home-page, .dashboard, .watch-page, .page-synopsis, .anime');
 
         // Itérer sur chaque élément et appliquer un comportement en fonction de la classe
         elements.forEach(element => {
@@ -33,6 +34,11 @@ class Main {
                 console.log('Code pour la classe "Dashboard"');
                 new Dashboard();
                 break
+                case 'anime':
+                    // Code spécifique pour l'élément avec la classe "Dashboard"
+                    console.log('Code pour la classe "anime"');
+                    new Anime();
+                    break;
             case 'watch-page':
                 console.log('code pour la classe watching');
                 new Watching();

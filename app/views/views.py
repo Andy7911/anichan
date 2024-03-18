@@ -8,7 +8,12 @@ def index():
 
 @blueprint.route('/dashbord')
 def dashbord():
-    return render_template('dashbord.html')
+    active_page = 'dashbord'
+    return render_template('dashbord.html',active_page=active_page)
+@blueprint.route('/dashbord/anime')
+def anime():
+    active_page = 'anime'
+    return render_template('anime.html',active_page=active_page)
     
 
 @blueprint.route('/register',methods=['POST'])
