@@ -2,7 +2,7 @@ from flask import request,Blueprint,Flask
 from model.media import Media
 from model.anime import Anime
 from database.db_connect import get_session, get_engine
-import os
+import os;
 def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 def get_relative_path():
@@ -48,6 +48,22 @@ def upload():
     else:
         return "Invalid file format!"
 
+@mediaRoute.route('/delete',methods=['POST'])
+def delete():
+
+    if 'image' in request.files:
+        file = request.files['image']
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'],(file.filename))
+        
+        if os.path.exists(file_path):
+            os.remove(file_path)
+
+    
+
+        return "File remove successfully!"
+    else:
+        return "Invalid file format!"
+    
 @mediaRoute.route("/test",methods=['POST'])
 
 def test():

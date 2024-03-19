@@ -62,10 +62,11 @@ this.toggle.onclick = function () {
     Dropzone.autoDiscover = false;
 
     var myDropzone = new Dropzone("#imageDropzone", {
-      url:"/upload/image",
+      url:"/upload",
       acceptedFiles:"image/*",
       addRemoveLinks: true, // Ajoute les liens de suppression
       maxFiles:1,
+      paramName:'image',
       // Événement après le téléchargement réussi
       success: function (file, response) {
         // Ajouter une classe pour identifier le fichier
@@ -115,6 +116,22 @@ this.toggle.onclick = function () {
     };
     myDropzone.on("removedfile", function (file) {
       // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
+      debugger;
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const options = {
+        method: 'POST',
+        body: formData // Utilisez l'objet FormData comme corps de la requête
+      };
+      fetch('/delete', options)
+  .then(data => {
+    console.log('Le fichier a été envoyé avec succès', data);
+  })
+  .catch(error => {
+    console.error('Erreur:', error);
+  });
+
       console.log("File removed: " + file.name);
     });
   }
