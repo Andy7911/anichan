@@ -1,8 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, Sequence,ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship,mapped_column
-
-engine = create_engine('sqlite:///:memory:', echo=True)
+from model.genre import genre
 
 # Déclarer la classe de base pour les modèles
 Base = declarative_base()
