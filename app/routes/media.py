@@ -118,12 +118,11 @@ def delete():
 @mediaRoute.route("/test",methods=['POST'])
 def test():
 
-
         session = db.get_session()
-        new_anime = Anime(title='montest', description= 'jonathan chelbet aka le francois', genre="Horror")
+        new_anime = Anime(title='Maxi le titan', description= 'Veut manger tout les humain par gourmandise', genre="Horror")
         session.add(new_anime)
         session.commit()
-
+        print('tentative au mon id apparait:',new_anime.id)
         return "File uploaded successfully!"
    
 

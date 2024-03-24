@@ -13,7 +13,7 @@ class Anime(Base):
    title = Column(String, nullable=False)
    description = Column(String,nullable=False)
    genre = Column(String(50),nullable=False)
-   medias = relationship("Media", back_populates="anime")
+  
 
 
 
