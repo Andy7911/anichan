@@ -65,25 +65,5 @@
 <script src="../static/dist/bundle.js"></script>
     <!-- <script src="../static/js/SelectionAnime.js"></script>
     <script src="../static/js/Dashbord.js"></script> -->
-    <script>
-  
-        function showTab(tabId) {
-            // Masquer tous les contenus des onglets
-            var tabContents = document.getElementsByClassName('pages__tab-content');
-            for (var i = 0; i < tabContents.length; i++) {
-                tabContents[i].style.display = 'none';
-            }
-        
-            // Afficher le contenu de l'onglet sélectionné
-            var selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.style.display = 'block';
-            }
-        }
-        
-        // Afficher le premier onglet au chargement de la page
-        showTab('tab1');
-
-    </script>
 </body>
 </html>

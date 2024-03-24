@@ -15,37 +15,58 @@ export default class Anime {
     this.activeLink();
     this.mouseOver();
     this.toggleClass();
-this.inputSelect();
-this.initDropZone();
+    this.inputSelect();
+    this.initDropZone();
+    this.file_title = null;
+    this.file_music = null;
+    this.file_gif = null;
+
   }
-// add hovered class to selected list item
+  // add hovered class to selected list item
+
+  onSubmit() {
+
+    const formData = new FormData();
+    formData.append('image', file);
    
-    inputSelect(){
-      new MultiSelectTag('chosen-select') 
-    }
 
-activeLink() {
-  
-  this.list.forEach((item) => {
-    item.classList.remove("hovered");
-  });
-  // this.classList.add("hovered");
-}
-mouseOver(){
-this.list.forEach((item) => item.addEventListener("mouseover", this.activeLink()));
-}
+    const options = {
+      method: 'POST',
+      body: formData // Utilisez l'objet FormData comme corps de la requête
+    };
+    fetch('/create', options)
+      .then(data => console.log("sucess anime create", data))
+      .catch(error => console.log('james nothing compile', error))
 
-// Menu Toggle
 
-toggleClass(){
-  let main = document.querySelector(".main");
 
-let navigation = document.querySelector(".navigation");
-this.toggle.onclick = function () {
-  navigation.classList.toggle("active");
-  main.classList.toggle("active");
-}; 
-}
+  }
+  inputSelect() {
+    new MultiSelectTag('chosen-select')
+  }
+
+  activeLink() {
+
+    this.list.forEach((item) => {
+      item.classList.remove("hovered");
+    });
+    // this.classList.add("hovered");
+  }
+  mouseOver() {
+    this.list.forEach((item) => item.addEventListener("mouseover", this.activeLink()));
+  }
+
+  // Menu Toggle
+
+  toggleClass() {
+    let main = document.querySelector(".main");
+
+    let navigation = document.querySelector(".navigation");
+    this.toggle.onclick = function () {
+      navigation.classList.toggle("active");
+      main.classList.toggle("active");
+    };
+  }
 
   initDropZone() {
     // Dropzone for Images
@@ -61,12 +82,29 @@ this.toggle.onclick = function () {
 
     Dropzone.autoDiscover = false;
 
-    var myDropzone = new Dropzone("#imageDropzone", {
-      url:"/upload",
-      acceptedFiles:"image/*",
+    var myDropzoneImg = new Dropzone("#imageDropzone", {
+      url: "/upload",
+      acceptedFiles: "image/*",
       addRemoveLinks: true, // Ajoute les liens de suppression
-      maxFiles:1,
-      paramName:'image',
+      maxFiles: 1,
+      paramName: 'image_title',
+      // Événement après le téléchargement réussi
+      success: function (file, response) {
+        // Ajouter une classe pour identifier le fichier
+        file.previewElement.classList.add("dz-success");
+        output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
+        debugger
+
+      
+
+      }
+    });
+
+    var myDropzoneGif = new Dropzone("#videoDropzone", {
+      url: '/upload',
+      acceptedFiles: 'image/gif',
+      addRemoveLinks: true, // Ajoute les liens de suppression
+      paramName: "image_gif",
       // Événement après le téléchargement réussi
       success: function (file, response) {
         // Ajouter une classe pour identifier le fichier
@@ -76,37 +114,36 @@ this.toggle.onclick = function () {
       }
     });
 
-    // var myDropzone = new Dropzone("#videoDropzone", {
-    //   url:'/upload/image',
-    //   acceptedFiles:"video/*",
-    //   addRemoveLinks: true, // Ajoute les liens de suppression
+    var myDropzoneMusic = new Dropzone("#musicDropzone", {
+      url: '/upload',
+      acceptedFiles: "audio/*",
+      addRemoveLinks: true, // Ajoute les liens de suppression
+      paramName: "music",
+      // Événement après le téléchargement réussi
+      success: function (file, response) {
+        // Ajouter une classe pour identifier le fichier
+        file.previewElement.classList.add("dz-success");
+        output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
 
-    //   // Événement après le téléchargement réussi
-    //   success: function (file, response) {
-    //     // Ajouter une classe pour identifier le fichier
-    //     file.previewElement.classList.add("dz-success");
-    //     output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
+      }
+    });
+    var myDropzoneBottom = new Dropzone("#bottomDropzone", {
+      url: '/upload',
+      acceptedFiles: "audio/*",
+      addRemoveLinks: true, // Ajoute les liens de suppression
+      paramName: "music",
+      // Événement après le téléchargement réussi
+      success: function (file, response) {
+        // Ajouter une classe pour identifier le fichier
+        file.previewElement.classList.add("dz-success");
+        output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
 
-    //   }
-    // });
-
-    // var myDropzone = new Dropzone("#musicDropzone", {
-    //   url:'/upload/audio',
-    //   acceptedFiles:"audio/*",
-    //   addRemoveLinks: true, // Ajoute les liens de suppression
-
-    //   // Événement après le téléchargement réussi
-    //   success: function (file, response) {
-    //     // Ajouter une classe pour identifier le fichier
-    //     file.previewElement.classList.add("dz-success");
-    //     output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
-
-    //   }
-    // });
+      }
+    });
     Dropzone.options.myGreatDropzone = { // camelized version of the `id`
       paramName: "file", // The name that will be used to transfer the file
       maxFilesize: 30, // MB
-      maxFiles:1,
+      maxFiles: 1,
       accept: function (file, done) {
         if (file.name == "justinbieber.jpg") {
           done("Naha, you don't.");
@@ -114,9 +151,11 @@ this.toggle.onclick = function () {
         else { done(); }
       }
     };
-    myDropzone.on("removedfile", function (file) {
+    myDropzoneImg.on("removedfile", function (file) {
+      
       // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
       debugger;
+  
       const formData = new FormData();
       formData.append('image', file);
 
@@ -125,14 +164,82 @@ this.toggle.onclick = function () {
         body: formData // Utilisez l'objet FormData comme corps de la requête
       };
       fetch('/delete', options)
-  .then(data => {
-    console.log('Le fichier a été envoyé avec succès', data);
-  })
-  .catch(error => {
-    console.error('Erreur:', error);
-  });
+        .then(data => {
+          console.log('Le fichier a été envoyé avec succès', data);
+
+        })
+        .catch(error => {
+          console.error('Erreur:', error);
+        });
 
       console.log("File removed: " + file.name);
     });
+    myDropzoneGif.on("removedfile", function (file) {
+      // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
+      debugger;
+  
+      const formData = new FormData();
+      formData.append('image_gif', file);
+
+      const options = {
+        method: 'POST',
+        body: formData // Utilisez l'objet FormData comme corps de la requête
+      };
+      fetch('/delete', options)
+        .then(data => {
+          console.log('Le fichier a été envoyé avec succès', data);
+
+        })
+        .catch(error => {
+          console.error('Erreur:', error);
+        });
+
+      console.log("File removed: " + file.name);
+    });
+    myDropzoneMusic.on("removedfile", function (file) {
+      // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
+      debugger;
+  
+      const formData = new FormData();
+      formData.append('music', file);
+
+      const options = {
+        method: 'POST',
+        body: formData // Utilisez l'objet FormData comme corps de la requête
+      };
+      fetch('/delete', options)
+        .then(data => {
+          console.log('Le fichier a été envoyé avec succès', data);
+
+        })
+        .catch(error => {
+          console.error('Erreur:', error);
+        });
+
+      console.log("File removed: " + file.name);
+    });
+    myDropzoneBottom.on("removedfile", function (file) {
+      // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
+      debugger;
+  
+      const formData = new FormData();
+      formData.append('image_bottom', file);
+
+      const options = {
+        method: 'POST',
+        body: formData // Utilisez l'objet FormData comme corps de la requête
+      };
+      fetch('/delete', options)
+        .then(data => {
+          console.log('Le fichier a été envoyé avec succès', data);
+
+        })
+        .catch(error => {
+          console.error('Erreur:', error);
+        });
+
+      console.log("File removed: " + file.name);
+    });
+  
   }
 }

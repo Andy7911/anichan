@@ -1,6 +1,8 @@
-from sqlalchemy import create_engine, Column, Integer, String, Sequence
+from sqlalchemy import create_engine, Column, Integer, String, Sequence,ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker,relationship,mapped_column
+from model.anime import Anime as AnimeBase
+
 
 
 
@@ -9,11 +11,10 @@ Base = declarative_base()
 
 # Définir le modèle User
 class Media(Base):
-    __tablename__ = 'media'
-
+    __tablename__ = 'medias'
     id = Column(Integer,primary_key=True)
     filename = Column(String(50), unique=True, nullable=False)
     filepath = Column(String, nullable=False)
     size = Column(Integer)
-
-
+    anime_id = Column(Integer,ForeignKey(AnimeBase.id))
+    anime = relationship("Anime", back_populates="medias")

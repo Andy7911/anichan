@@ -20,10 +20,14 @@ body{
         border: 1px solid #cacaca;
         height: 40px;
         border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 10px;
     }
     &__text_aria{
         height: 100px;
         resize: none;
+        margin-bottom: 20px;
+        padding: 10px;
     }
 }
 .input-half {

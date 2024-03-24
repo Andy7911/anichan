@@ -32,3 +32,7 @@ def synopsie():
 @blueprint.route('/admin')
 def admin():
     return render_template('admin.html')
+
+@blueprint.route('/dashbord/episode')
+def addEpisode():
+    return render_template('add-episode.html')
