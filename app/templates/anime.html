@@ -15,15 +15,9 @@
             <h2>Genre</h2>
             <select name="chosen-select" id="chosen-select"
                 data-placeholder="Choose tags ..." name="tags[]" multiple>
-                <option value="1">Fantasy </option>
-                <option value="2">Action </option>
-                <option value="3">Comedie</option>
-                <option value="4">Aventure</option>
-                <option value="5">Drame</option>
-                <option value="6">Romance</option>
-                <option value="7">Josei</option>
-                <option value="8">Isekai</option>
-                <option value="9">Tranche de vie</option>
+                {% for element in data_genre %} 
+                <option value="{{element.id}}">{{ element.title }}</option>
+            {% endfor %}
             </select>
         </div>
         <span id="output"></span>

@@ -1,6 +1,7 @@
-from sqlalchemy import create_engine, Column, Integer, String, Sequence,ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String,DateTime, Sequence,ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship,mapped_column
+from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
 
 
 # Déclarer la classe de base pour les modèles
@@ -12,6 +13,7 @@ class Anime(Base):
    title = Column(String, nullable=False)
    description = Column(String,nullable=False)
    genre = Column(String(50),nullable=False)
+   date = Column(DateTime,default=func.now())
   
 
 

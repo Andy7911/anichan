@@ -1,5 +1,10 @@
 from flask import Blueprint,render_template,request,jsonify
+from database.database import Database
+from model.genre import Genre;
 
+db = Database()
+engine = db.get_engine()
+session = db.get_session()
 blueprint = Blueprint("blueprint",__name__)
 
 @blueprint.route('/')
@@ -10,10 +15,15 @@ def index():
 def dashbord():
     active_page = 'dashbord'
     return render_template('dashbord.html',active_page=active_page)
+
 @blueprint.route('/dashbord/anime')
 def anime():
+    session = db.get_session()
+    toutes_les_lignes = session.query(Genre).all()
+    for ligne in toutes_les_lignes:
+        print('test',ligne)
     active_page = 'anime'
-    return render_template('anime.html',active_page=active_page)
+    return render_template('anime.html',active_page=active_page,data_genre = toutes_les_lignes)
     
 
 @blueprint.route('/register',methods=['POST'])

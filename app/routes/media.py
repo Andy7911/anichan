@@ -1,6 +1,8 @@
 from flask import request,Blueprint,Flask
 from model.anime import Anime
 from model.medias import Media
+from model.genre import Genre
+from model.animeGenre import  AnimeGenre
 from sqlalchemy.orm import sessionmaker
 
 # from database.db_connect import get_session, get_engine
@@ -40,14 +42,16 @@ engine = db.get_engine()
 # # Lier le modèle à la base de données
 Media.metadata.bind = engine
 Anime.metadata.bind = engine
-
+Genre.metadata.bind = engine
+AnimeGenre.metadata.bind = engine
 
 # # # Créez les tables dans la base de données
 Anime.metadata.create_all(engine)
 
 # # # # # Créez les tables dans la base de données
 Media.metadata.create_all(engine)
-
+Genre.metadata.create_all(engine)
+AnimeGenre.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 @mediaRoute.route('/upload',methods=['POST'])
 def upload():
