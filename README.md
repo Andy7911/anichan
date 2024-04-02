@@ -11,7 +11,9 @@ Mon application flask python fait un Site de Streaming pour diffusion de Anime e
 ## Instalation
 
 git clone https://github.com/Andy7911/anichan.git
+
 cd anichan
+
 pip install (pour installer les dependances)
 
 ## Statut du projet
@@ -28,5 +30,6 @@ Les pull requests sont les bienvenues. Pour les changements majeurs, veuillez ou
 
 ## Auteur et remerciements
 
-auteur: anderson beauvais 
+auteur: anderson beauvais
+
 contributeur: 
