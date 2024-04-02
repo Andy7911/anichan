@@ -1,13 +1,18 @@
 .home-page {
+    h2{
+        margin-bottom: 40px;
+    }
     .last_anime{
         flex-wrap: wrap;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 50px;
     }
     .viewings{
         flex-wrap: wrap;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 50px;
     }
     .thumbnail{
         position: relative;
@@ -17,6 +22,7 @@
         }
         @media (max-width: $mobile) {
             width: 100%;
+            margin-bottom: 20px;
         }
         img{
             border-radius: 15px;
@@ -198,6 +204,7 @@
             }
             @media (max-width: $mobile) {
                 width: 100%;
+                margin-bottom: 20px;
             }
             img {
                 border-radius: 12px;

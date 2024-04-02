@@ -12,6 +12,7 @@ export default class Anime {
     this.toggle = document.querySelector(".toggle");
     this.navigation = document.querySelector(".navigation");
     this.main = document.querySelector(".main");
+    this.formulaire = document.getElementById('formulaire');
     this.activeLink();
     this.mouseOver();
     this.toggleClass();
@@ -20,15 +21,34 @@ export default class Anime {
     this.file_title = null;
     this.file_music = null;
     this.file_gif = null;
+    this.file_bottom = null;
+    this.onClickEven();
 
   }
   // add hovered class to selected list item
+  onClickEven() {
+    this.formulaire.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      var title = document.getElementById('title');
+      var decription = document.getElementById('description');
+      console.log("title", title.value);
+      console.log("description", decription.value);
+
+
+    })
+  }
+
 
   onSubmit() {
 
+
+
     const formData = new FormData();
     formData.append('image', file);
-   
+    formData.append("image_title", this.file_title);
+    formData.append("music",this.file_music)
 
     const options = {
       method: 'POST',
@@ -95,7 +115,7 @@ export default class Anime {
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
         debugger
 
-      
+        this.file_title
 
       }
     });
@@ -110,7 +130,7 @@ export default class Anime {
         // Ajouter une classe pour identifier le fichier
         file.previewElement.classList.add("dz-success");
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
-
+        this.file_gif
       }
     });
 
@@ -124,14 +144,14 @@ export default class Anime {
         // Ajouter une classe pour identifier le fichier
         file.previewElement.classList.add("dz-success");
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
-
+        this.file_music = file;
       }
     });
     var myDropzoneBottom = new Dropzone("#bottomDropzone", {
       url: '/upload',
-      acceptedFiles: "audio/*",
+      acceptedFiles: "image/*",
       addRemoveLinks: true, // Ajoute les liens de suppression
-      paramName: "music",
+      paramName: "imageBottom",
       // Événement après le téléchargement réussi
       success: function (file, response) {
         // Ajouter une classe pour identifier le fichier
@@ -152,10 +172,10 @@ export default class Anime {
       }
     };
     myDropzoneImg.on("removedfile", function (file) {
-      
+
       // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
       debugger;
-  
+
       const formData = new FormData();
       formData.append('image', file);
 
@@ -177,7 +197,7 @@ export default class Anime {
     myDropzoneGif.on("removedfile", function (file) {
       // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
       debugger;
-  
+
       const formData = new FormData();
       formData.append('image_gif', file);
 
@@ -199,7 +219,7 @@ export default class Anime {
     myDropzoneMusic.on("removedfile", function (file) {
       // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
       debugger;
-  
+
       const formData = new FormData();
       formData.append('music', file);
 
@@ -221,7 +241,7 @@ export default class Anime {
     myDropzoneBottom.on("removedfile", function (file) {
       // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
       debugger;
-  
+
       const formData = new FormData();
       formData.append('image_bottom', file);
 
@@ -240,6 +260,6 @@ export default class Anime {
 
       console.log("File removed: " + file.name);
     });
-  
+
   }
 }
