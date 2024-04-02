@@ -1,7 +1,8 @@
 # Anichan
 
 ##  Description 
-Mon application flask python fait un Site de Streaming pour diffusion de Anime et produit ecommerce dérivé
+
+Conception d'un Site de Streaming pour diffusion de Anime et produit ecommerce dérivé
 
 ## Technologie
 
