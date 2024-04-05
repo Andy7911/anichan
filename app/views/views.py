@@ -43,6 +43,10 @@ def synopsie():
 def admin():
     return render_template('admin.html')
 
+@blueprint.route('/store')
+def store():
+    return render_template('store.html')
+
 @blueprint.route('/dashbord/episode')
 def addEpisode():
     return render_template('add-episode.html')

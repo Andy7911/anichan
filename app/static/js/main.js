@@ -6,6 +6,7 @@ import Watching from './Washing';
 import Synopsis from './Synopsis';
 import Anime from './Anime';
 import Episode from './Episode';
+import Store from './Store';
 
 class Main {
     constructor() {
@@ -15,7 +16,7 @@ class Main {
     initElements() {
 
         // Récupérer tous les éléments avec des classes spécifiques
-        const elements = document.querySelectorAll('.home-page, .dashboard, .watch-page, .page-synopsis, .anime, .episode');
+        const elements = document.querySelectorAll('.home-page, .dashboard, .watch-page, .page-synopsis, .anime, .episode, .store');
 
         // Itérer sur chaque élément et appliquer un comportement en fonction de la classe
         elements.forEach(element => {
@@ -50,6 +51,9 @@ class Main {
                 break;
             case "page-synopsis":
                 new Synopsis();
+                break;
+            case "store":
+                new Store();
                 break;
             default:
                 // Code par défaut si aucune classe ne correspond

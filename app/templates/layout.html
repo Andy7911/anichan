@@ -62,8 +62,28 @@
     <!-- Ajoutez ici vos scripts JavaScript communs à toutes les pages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
-<script src="../static/dist/bundle.js"></script>
+    <script src="../static/dist/bundle.js"></script>
     <!-- <script src="../static/js/SelectionAnime.js"></script>
     <script src="../static/js/Dashbord.js"></script> -->
+    <script>
+  
+        function showTab(tabId) {
+            // Masquer tous les contenus des onglets
+            var tabContents = document.getElementsByClassName('pages__tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = 'none';
+            }
+        
+            // Afficher le contenu de l'onglet sélectionné
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
+            }
+        }
+        
+        // Afficher le premier onglet au chargement de la page
+        showTab('tab1');
+
+    </script>
 </body>
 </html>
