@@ -1,44 +1,73 @@
 {% extends 'layout-dashbord.html' %}
 {% block content %}
 <main class="anime">
-    <form id="formulaire" class="form"   >
-        <div class="input-form">
-            <h2>Title</h2>
-            <input id="title" name="title" class="input-full__field" placeholder="Enter Anime title">
+    <form id="formulaire" class="form">
+        <div class="content">
+        <div class="content__right">
+            <h2>Thumbnail</h2>
+            <div id="thumbDropzone" class="dropzone dropzone__thumbnail">
+                <div class="dz-message" data-dz-message>
+                    
+                    <span>
+                        <img src="../static/img/animeupload.webp" width="160"  height="160" srcset="">
+                        Drop images thumbnail here or click.
+                    </span>
+                </div>
+    
+            </div>
         </div>
-        <div class="input-form">
-            <h2>Description</h2>
-            <textarea id="description" class="input-full__text_aria" name="description"
-                placeholder="Enter Anime title"></textarea>
+        <div class="content__left">
+            <div class="input-form">
+                <h2>Title</h2>
+                <input id="title" name="title" class="input-full__field"
+                    placeholder="Enter Anime title">
+            </div>
+            <div class="input-form">
+                <h2>Description</h2>
+                <textarea id="description" class="input-full__text_aria"
+                    name="description"
+                    placeholder="Enter Anime title"></textarea>
+            </div>
+            <div class="anime_input_box">
+                <h2>Genre</h2>
+                <select name="chosen-select" id="chosen-select"
+                    data-placeholder="Choose tags ..." name="tags[]" multiple>
+                    {% for element in data_genre %}
+                    <option value="{{element.id}}">{{ element.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
         </div>
-        <div class="anime_input_box">
-            <h2>Genre</h2>
-            <select name="chosen-select" id="chosen-select"
-                data-placeholder="Choose tags ..." name="tags[]" multiple>
-                {% for element in data_genre %} 
-                <option value="{{element.id}}">{{ element.title }}</option>
-            {% endfor %}
-            </select>
         </div>
         <span id="output"></span>
-        <h2>Title Image </h2>
-        <div id="imageDropzone" class="dropzone">
-            <div class="dz-message" data-dz-message>
-                <span>
-                    Drop images gif here or click to upload.
-                </span>
+        <div class="content">
+            <div class="content__left">
+                <h2>Title Image </h2>
+                <div id="imageDropzone" class="dropzone">
+                    <div class="dz-message" data-dz-message>
+                        <span>
+                            <img src="../static/img/title-logo-img.webp" width="160" height="160">
+                            Drop images gif here or click to upload.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="content__right">
+                <h2>Music</h2>
+                <div id="musicDropzone" class="dropzone">
+                    <div class="dz-message" data-dz-message>
+                        <span>
+                            <img src="../static/img/music-logo.webp" width="160" height="160">
+
+                            Drop images gif here or click to upload.
+                        </span>
+                    </div>
+
+                </div>
             </div>
 
         </div>
-        <h2>Music</h2>
-        <div id="musicDropzone" class="dropzone">
-            <div class="dz-message" data-dz-message>
-                <span>
-                    Drop images gif here or click to upload.
-                </span>
-            </div>
 
-        </div>
         <h2>Video</h2>
         <div id="videoDropzone" class="dropzone">
             <div class="dz-message" data-dz-message>
@@ -57,7 +86,7 @@
             </div>
 
         </div>
-            <button class="form__submit" type="submit"> Envoyer</button>
+        <button class="form__submit" type="submit"> Envoyer</button>
     </form>
 
 </main>

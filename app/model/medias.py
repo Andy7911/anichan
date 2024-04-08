@@ -10,7 +10,7 @@ class ImageType(enum.Enum):
     music = 'music'
     imageTitle = 'imageTitle'
     imageBottom = 'imageBottom'
-    thumnail = "thumnail"
+    thumbnail = "thumbnail"
     manga = " manga"
 
 

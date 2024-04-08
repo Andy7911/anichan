@@ -53,6 +53,17 @@ Media.metadata.create_all(engine)
 Genre.metadata.create_all(engine)
 AnimeGenre.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
+@mediaRoute.route('/animes',methods=['POST'])
+def createAnime():
+    
+    new_anime = Anime(title = request.title , description = request.description,popularite = 0 )
+
+    if 'image_title' in request.files:
+        file = request.files['image_title']
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'],(file.filename))
+        file.save(file_path)
+        return "kk"
+
 @mediaRoute.route('/upload',methods=['POST'])
 def upload():
 

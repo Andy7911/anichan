@@ -30,12 +30,21 @@ export default class Anime {
     this.formulaire.addEventListener("submit", function (event) {
 
       event.preventDefault();
-
+      debugger;
       var title = document.getElementById('title');
       var decription = document.getElementById('description');
       console.log("title", title.value);
       console.log("description", decription.value);
+      const formData = new FormData();
+      formData.append('image', file);
+      formData.append("image_title", this.file_title);
+      formData.append("music",this.file_music)
 
+      const options = {
+        method : "Post",
+        body : formData
+      }
+      fetch('/animes',options).then((data)=> console.log("success",data)).catch((error))
 
     })
   }
@@ -49,6 +58,7 @@ export default class Anime {
     formData.append('image', file);
     formData.append("image_title", this.file_title);
     formData.append("music",this.file_music)
+    
 
     const options = {
       method: 'POST',
@@ -119,6 +129,26 @@ export default class Anime {
 
       }
     });
+    var myDropzonethumb = new Dropzone("#thumbDropzone", {
+      url: "/upload",
+      acceptedFiles: "image/*",
+      addRemoveLinks: true, // Ajoute les liens de suppression
+      maxFiles: 1,
+     resizeHeight:212,
+     resizeWidth:370,
+      paramName: 'image_thumb',
+      // Événement après le téléchargement réussi
+      success: function (file, response) {
+        // Ajouter une classe pour identifier le fichier
+        file.previewElement.classList.add("dz-success");
+        output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
+      
+
+        this.file_title
+
+      }
+    });
+
 
     var myDropzoneGif = new Dropzone("#videoDropzone", {
       url: '/upload',
@@ -260,6 +290,30 @@ export default class Anime {
 
       console.log("File removed: " + file.name);
     });
+
+    myDropzonethumb.on("removedfile", function (file) {
+      // Vous pouvez exécuter des actions supplémentaires ici avant la suppression du fichier
+      debugger;
+
+      const formData = new FormData();
+      formData.append('image_bottom', file);
+
+      const options = {
+        method: 'POST',
+        body: formData // Utilisez l'objet FormData comme corps de la requête
+      };
+      fetch('/delete', options)
+        .then(data => {
+          console.log('Le fichier a été envoyé avec succès', data);
+
+        })
+        .catch(error => {
+          console.error('Erreur:', error);
+        });
+
+      console.log("File removed: " + file.name);
+    });
+
 
   }
 }

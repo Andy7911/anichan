@@ -47,6 +47,10 @@ def admin():
 def store():
     return render_template('store.html')
 
+@blueprint.route('/login')
+def login():
+    return render_template('login.html')
+
 @blueprint.route('/dashbord/episode')
 def addEpisode():
     return render_template('add-episode.html')

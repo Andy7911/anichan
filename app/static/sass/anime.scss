@@ -1,4 +1,16 @@
 .anime {
+    .content{
+        display: flex;
+        justify-content: space-between;
+        &__left{
+            width: 48%;
+            padding-right: 10px;
+        }
+        &__right{
+        width: 48%;
+        
+        }
+    }
     select {
         width: 300px;
     }
@@ -30,5 +42,17 @@
     .dropzone {
         margin-bottom: 30px;
         border: 1px dotted black;
+        .dz-message{
+            span{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        &__thumbnail{
+            min-height: 250px;
+        }
+        
     }
 }

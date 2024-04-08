@@ -1,0 +1,36 @@
+// Variables
+$input-border-color: #ccc;
+$input-border-color-focus: blue;
+$error-color: red;
+$input-padding: 10px;
+$input-border-radius: 4px;
+
+// Mixin pour le style de base des inputs
+@mixin input-style($borderColor: $input-border-color) {
+  padding: $input-padding;
+  border: 1px solid $borderColor;
+  border-radius: $input-border-radius;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+  height: 50px;
+  &::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 3;
+}
+  &:focus {
+    border-color: $input-border-color-focus;
+  }
+}
+
+// Styles spécifiques des inputs
+.input-base {
+  @include input-style();
+}
+
+.input-error {
+  @include input-style($error-color);
+}
+
+// Tu peux ajouter plus de styles pour d'autres variations ici
+
