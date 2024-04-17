@@ -1,4 +1,17 @@
 .anime {
+    &__banner{
+        height: 200px;
+        width: 100%;
+      background: url('../img/banniere-dash.webp');
+    margin-bottom: 75px;
+      background-repeat: no-repeat;
+      background-position: center top ;
+      background-size: cover;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
     .content{
         display: flex;
         justify-content: space-between;
