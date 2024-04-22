@@ -1,27 +1,26 @@
 .anime {
-    &__banner{
+    &__banner {
         height: 200px;
         width: 100%;
-      background: url('../img/banniere-dash.webp');
-    margin-bottom: 75px;
-      background-repeat: no-repeat;
-      background-position: center top ;
-      background-size: cover;
-        img{
+        background: url("../img/banniere-dash.webp");
+        margin-bottom: 75px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        img {
             width: 100%;
             height: auto;
         }
     }
-    .content{
+    .content {
         display: flex;
         justify-content: space-between;
-        &__left{
+        &__left {
             width: 48%;
             padding-right: 10px;
         }
-        &__right{
-        width: 48%;
-        
+        &__right {
+            width: 48%;
         }
     }
     select {
@@ -32,7 +31,7 @@
     }
     .form {
         padding: 20px;
-        
+
         &__submit {
             background-color: $secondaryColor;
             color: aliceblue;
@@ -55,17 +54,76 @@
     .dropzone {
         margin-bottom: 30px;
         border: 1px dotted black;
-        .dz-message{
-            span{
+        .dz-message {
+            span {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
             }
         }
-        &__thumbnail{
+        &__thumbnail {
             min-height: 250px;
         }
-        
+    }
+    .checkbox {
+        &__content {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        &__custom {
+            width: 33%;
+            input{
+                display: none;
+            }
+            input:checked + .checkbox__btn {
+                border: 2px solid #ffdae9;
+            }
+            input:checked + .checkbox__btn > .icon {
+             opacity: 1;
+             transform: translateX(-50%) scale(1);
+            }
+            img {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+                height: auto;
+            }
+            .icon {
+                color: #ffffff;
+                background-color: #FFDAE9;
+                font-size: 20px;
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%) scale(2);
+                border-radius: 50px;
+                padding: 3px;
+                transition: 0.5s;
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+        &__btn {
+            margin: 10px;
+            width: 320px;
+            height: 240px;
+            border: 3px solid transparent;
+            display: inline-block;
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 0 20px #c3c3c367;
+            cursor: pointer;
+        }
+        &__icon {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 }
