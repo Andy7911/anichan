@@ -1,5 +1,5 @@
 import { h, render } from 'preact';
-import routes from '../../../preact/route';
+import routes from './preact/routes';
 
 const root = document.getElementById('app');
 const routeKeys = Object.keys(routes);
@@ -11,7 +11,7 @@ function renderApp() {
     if (component) {
         render(routes[component](), root);
     } else {
-        render(<div style={{color:"red"}}>404 - Page not found james </div>, root);
+        render(<div>404 - Page not found</div>, root);
     }
 }
 

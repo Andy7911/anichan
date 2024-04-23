@@ -1,4 +1,4 @@
-from flask import Blueprint,render_template,request,jsonify
+from flask import Blueprint,render_template,request,jsonify,send_from_directory
 from database.database import Database
 from model.genre import Genre;
 
@@ -20,6 +20,19 @@ def dashbord():
 def preact():
     
     return render_template('preact.html')
+
+@blueprint.route('/boutique')
+def boutique():
+    
+    return render_template('preact.html')
+
+# @blueprint.route('/preact')
+# def preact():
+#     return send_from_directory('./templates', 'preact.html')
+
+# @blueprint.route('/static/<path:path>')
+# def serve_static(path):
+#     return send_from_directory('./templates', path)
 
 @blueprint.route('/dashbord/anime')
 def anime():
