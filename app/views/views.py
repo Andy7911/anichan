@@ -16,6 +16,11 @@ def dashbord():
     active_page = 'dashbord'
     return render_template('dashbord.html',active_page=active_page)
 
+@blueprint.route('/preact')
+def preact():
+    
+    return render_template('preact.html')
+
 @blueprint.route('/dashbord/anime')
 def anime():
     session = db.get_session()
