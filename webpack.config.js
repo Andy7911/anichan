@@ -22,6 +22,19 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|jpg|gif|svg|webp)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: 'images/', // Le répertoire de sortie pour les images
+                    },
+                  },
+                ],
+              },
+            
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
