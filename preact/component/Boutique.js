@@ -1,6 +1,5 @@
 const { h  } = require('preact');
 import { useState } from 'preact/hooks';
-import 'preact/debug';
 function Boutique(){
 
     const [Message, setMessage] = useState("welcome to page boutique");

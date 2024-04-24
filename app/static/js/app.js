@@ -1,10 +1,10 @@
-import { h, render } from 'preact';
+const { h, render } = require('preact');
 import routes from '../../../preact/route';
 
 const root = document.getElementById('app');
 const routeKeys = Object.keys(routes);
 
-function renderApp() {
+export default function renderApp() {
     const currentPath = window.location.pathname;
     const component = routeKeys.find(route => currentPath.match(route));
 
@@ -15,7 +15,7 @@ function renderApp() {
     }
 }
 
-renderApp();
+
 
 // Rafraîchit l'application lorsque l'URL change
 window.addEventListener('popstate', renderApp);
