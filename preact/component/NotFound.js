@@ -5,8 +5,8 @@ function NotFound(){
 
     const [Message, setMessage] = useState("Page no found");
 return(
-    <div>
-       <img src={img}/>
+    <div className='not-found'>
+       <img className='img' src={img}/>
         <h1 style={{color:"red"}}>{Message}</h1>
      
     </div>);

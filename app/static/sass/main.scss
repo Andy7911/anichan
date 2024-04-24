@@ -45,3 +45,20 @@ body{
         text-transform: uppercase;
     }
 }
+
+.not-found{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 50px;
+    h1{
+        font-size: 50px;
+        text-align: center;
+       
+    }
+     img{
+        margin: auto;
+            width: 500px;
+            height: auto;
+        }
+}

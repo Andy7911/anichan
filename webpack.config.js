@@ -1,4 +1,6 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     watch: true,
     mode:"development",
@@ -9,7 +11,8 @@ module.exports = {
       
         path:  path.resolve(__dirname,'app/static/dist'), 
         filename: '[name].js',
-    }, 
+    },
+   
     resolve: {
         alias: {
             'react': 'preact/compat',
