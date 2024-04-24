@@ -2,7 +2,7 @@ from flask import Flask
 from views.views import blueprint
 from routes.media import mediaRoute
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
+app = Flask(__name__, static_folder='./static', template_folder='./templates')
 app.register_blueprint(mediaRoute)
 app.register_blueprint(blueprint)
 

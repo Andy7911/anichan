@@ -16,23 +16,11 @@ def dashbord():
     active_page = 'dashbord'
     return render_template('dashbord.html',active_page=active_page)
 
-@blueprint.route('/preact')
-def preact():
-    
+@blueprint.route('/', defaults={'path': ''})
+@blueprint.route('/<path:path>')
+def catch_all(path):
     return render_template('preact.html')
 
-@blueprint.route('/boutique')
-def boutique():
-    
-    return render_template('preact.html')
-
-# @blueprint.route('/preact')
-# def preact():
-#     return send_from_directory('./templates', 'preact.html')
-
-# @blueprint.route('/static/<path:path>')
-# def serve_static(path):
-#     return send_from_directory('./templates', path)
 
 @blueprint.route('/dashbord/anime')
 def anime():
