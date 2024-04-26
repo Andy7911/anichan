@@ -3,33 +3,67 @@
 {% block content %}
 
 <main class="episode">
-    <form action="">
-    <div class="anime_input_box">
-        <h2>Anime</h2>
-        <select name="chosen-select" id="chosen-select"
-            data-placeholder="Choose tags ..." name="tags[]" multiple>
-        
-            <option value="">Test1</option>
-            <option value="">Test2</option>
-            <option value="">Test3</option>
-            <option value="">Test4</option>
-    
-        </select>
-    </div class=''>
-    <h2>Titre de épisode</h2>
-    <div class="input-form">
-        <input class="input-full__field"  type="text">
-    </div>
-<h2>Link video 1</h2>
-<input class="input-base" type="text" placeholder="Entrer le lien" >
-<h2>Link video 2</h2>
-<input class="input-base" type="text" placeholder="Entrer le lien" >
-<h2>Link video 2</h2>
-<input class="input-base" type="text" placeholder="Entrer le lien" >
-</form>
+    <form action class="form">
+        <div class="content">
+            <div class="content__left">
+            <h2>Thumbnail</h2>
+            <div id="thumbDropzone" class="dropzone dropzone__thumbnail">
+                <div class="dz-message" data-dz-message>
+
+                    <span>
+                        <img src="../static/img/animeupload.webp"
+                            width="160" height="160" srcset>
+                        Drop images thumbnail here or click.
+                    </span>
+                </div>
+
+            </div>
+            </div>
+            <div class="content__right" >
+            <div class="episode__input_box">
+                <h2>Anime Title</h2>
+                <select class="input-full__field" name="chosen-select"
+                    id="chosen-select"
+                    data-placeholder="Choose tags ..." name="tags[]" multiple>
+
+                    <option value>Test1</option>
+                    <option value>Test2</option>
+                    <option value>Test3</option>
+                    <option value>Test4</option>
+
+                </select>
+            </div>
+            <div class="input-form">
+                <h2>Titre de épisode</h2>
+                <input class="input-full__field" type="text">
+            </div>
+        </div>
+        </div>
+        <div class="episode__dynamique_input">
+            <h2>Videos</h2>
+            <div class="episode__input_list">
+                <input class="input-base input-full__field" type="text"
+                    placeholder="Entrer le lien">
+            </div>
+            <a id="inputadd" class="episode__input_add">
+                <ion-icon name="add"></ion-icon>
+            </a>
+        </div>
+        <div class="input row">
+            <div class="input__left">
+                <h2>NB EPISODE</h2>
+                <input class="input-full__field input-base" min="0"
+                    type="number">
+            </div>
+            <div class="input__right">
+                <h2>Saison</h2>
+                <input class="input-full__field input-base" min="0"
+                    type="number">
+
+            </div>
+        </div>
+        <button class="button-secondary">Envoyer</button>
+    </form>
 </main>
 
-
 {% endblock %}
-
-

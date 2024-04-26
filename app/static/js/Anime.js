@@ -1,6 +1,6 @@
 import Dropzone from "dropzone";
 // import "dropzone/dist/dropzone.css";
-
+import axios from "axios";
 
 
 export default class Anime {
@@ -19,41 +19,78 @@ export default class Anime {
     this.inputSelect();
     this.initDropZone();
     this.file_title = null;
-    this.file_music = null;
+    this.file_music;
     this.file_gif = null;
     this.file_bottom = null;
     this.onClickEven();
-
+    this.getMultiSelecte();
+    this.uploadedFiles = {};
+    this.onFileUploadSuccess(this);
+    this.count = 1;
+  }
+  getMultiSelecte() {
+    var selectElement = document.getElementById("chosen-select");
+     var selectedValues = Array.from(selectElement.selectedOptions).map(option => option.value)
+     console.log(selectedValues);
   }
   // add hovered class to selected list item
-  onClickEven() {
-    this.formulaire.addEventListener("submit", function (event) {
-
-      event.preventDefault();
-      debugger;
-      var title = document.getElementById('title');
-      var decription = document.getElementById('description');
-      console.log("title", title.value);
-      console.log("description", decription.value);
-      const formData = new FormData();
-      formData.append('image', file);
-      formData.append("image_title", this.file_title);
-      formData.append("music",this.file_music)
-
-      const options = {
-        method : "Post",
-        body : formData
-      }
-      fetch('/animes',options).then((data)=> console.log("success",data)).catch((error))
-
-    })
+  onSend(event){
+    event.preventDefault();
+    debugger;
+    var selectElement = document.getElementById("chosen-select");
+    var selectedValues = Array.from(selectElement.selectedOptions).map(option => option.value)
+    console.log(selectedValues);
+    
+    this.count++;
+    Object.keys(this.uploadedFiles).forEach(fileName => {
+    ('files',this.uploadedFiles[fileName]) 
+    });
+    var radioCat = document.querySelector('input[name="categorie"]:checked');
+    var title = document.getElementById('title');
+    var description = document.getElementById('description');
+    console.log("radioCat", radioCat.value);
+    console.log("title", title.value);
+    console.log("description", description.value);
+    const formData = new FormData();
+    formData.append("title",title.value);
+    formData.append("description",description.value)
+    // formData.append('image', file);
+    // formData.append("image_title", this.file_title);
+    Object.keys(this.uploadedFiles).forEach(fileName => {
+      formData.append('files',this.uploadedFiles[fileName]) 
+      });
+    formData.append("music",this.file_music)
+    formData.append("type",radioCat.value)
+    for( var option of selectedValues){
+    formData.append("genre[]", option);
   }
 
+    const options = {
+      method : "Post",
+      body : formData
+    }
+  axios.post('/api/createAnime',formData,{
+   
+   
+  }).then(()=>console.log('ss')).catch(error=> console.log(error))
+}
+  onClickEven() {
+    this.formulaire.addEventListener("submit", this.onSend.bind(this))
+
+    
+  }
+
+  onFileUploadSuccess(file, response) {
+    // Stocker le fichier ou les informations du fichier
+   
+    this.count++;
+    this.uploadedFiles[file.name] = file;
+
+    // Mettre à jour l'interface utilisateur ou effectuer d'autres actions
+    console.log(`File added: ${file.name}, size: ${file.size}`);
+}
 
   onSubmit() {
-
-
-
     const formData = new FormData();
     formData.append('image', file);
     formData.append("image_title", this.file_title);
@@ -111,7 +148,7 @@ export default class Anime {
     const output = document.querySelector("#output");
 
     Dropzone.autoDiscover = false;
-
+    var that = this;
     var myDropzoneImg = new Dropzone("#imageDropzone", {
       url: "/upload",
       acceptedFiles: "image/*",
@@ -125,7 +162,7 @@ export default class Anime {
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
         debugger
 
-        this.file_title
+        that.file_title
 
       }
     });
@@ -170,8 +207,9 @@ export default class Anime {
       addRemoveLinks: true, // Ajoute les liens de suppression
       paramName: "music",
       // Événement après le téléchargement réussi
-      success: function (file, response) {
+      success: (file, response) => {
         // Ajouter une classe pour identifier le fichier
+        debugger;
         file.previewElement.classList.add("dz-success");
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
         this.file_music = file;

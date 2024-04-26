@@ -11,7 +11,8 @@ class Episodes(Base):
    __tablename__ = 'episodes'
    episode_id = Column(Integer,primary_key=True)
    title = Column(String, nullable=False)
-   description = Column(String,nullable=False)
+   season = Column(Integer,default=0)
+   nb_episode = Column(Integer,default=0)
    release_date =Column(Date,nullable=True)
    thumbnail = Column(Integer,ForeignKey('images.image_id'))
    anime_id = Column(Integer, ForeignKey('anime.anime_id'))

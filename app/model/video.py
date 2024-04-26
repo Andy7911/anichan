@@ -12,7 +12,7 @@ class Video(Base):
    video_id = Column(Integer,primary_key=True)
    title = Column(String, nullable=False)
    url = Column(String,nullable=False)
-   description = Column(String,nullable=False)
+   text_iframe= Column(String,nullable=False)
    episode_id = Column(Integer, ForeignKey('episode.episode_id'))
 
  

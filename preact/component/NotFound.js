@@ -7,7 +7,7 @@ function NotFound(){
 return(
     <div className='not-found'>
        <img className='img' src={img}/>
-        <h1 style={{color:"red"}}>{Message}</h1>
+        <h1>{Message}</h1>
      
     </div>);
 }
