@@ -22,7 +22,7 @@ class Media(Base):
     __tablename__ = 'medias'
     id = Column(Integer,primary_key=True)
     filename = Column(String(50), unique=True, nullable=False)
-    filepath = Column(String, nullable=False)
+    filepath = Column(String(75), nullable=False)
     size = Column(Integer, nullable=True)
     type = Column(Enum(ImageType))
     anime_id = Column(Integer,ForeignKey(AnimeBase.id))
