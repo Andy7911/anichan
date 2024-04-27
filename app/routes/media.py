@@ -1,9 +1,7 @@
 from flask import request,Blueprint,Flask
-# from model.anime import Anime ,AnimeCategorie
-# from model.medias import Media,ImageType
 from model.genre import Genre
 from model.animeGenre import  AnimeGenre 
-from model.model import Parent,Child ,Anime,AnimeCategorie, Media ,ImageType
+from model.model import Anime,AnimeCategorie, Media ,ImageType
 from sqlalchemy.orm import sessionmaker
 from config import Config , file_paths
 # from database.db_connect import get_session, get_engine

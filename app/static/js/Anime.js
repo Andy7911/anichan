@@ -22,6 +22,7 @@ export default class Anime {
     this.file_music;
     this.file_gif = null;
     this.file_bottom = null;
+    this.file_thumb = null;
     this.onClickEven();
     this.getMultiSelecte();
     this.uploadedFiles = {};
@@ -54,8 +55,8 @@ export default class Anime {
     const formData = new FormData();
     formData.append("title",title.value);
     formData.append("description",description.value)
-    // formData.append('image', file);
-    // formData.append("image_title", this.file_title);
+    formData.append("image_title", this.file_title);
+    formData.append('image_bottom', this.file_bottom);
     Object.keys(this.uploadedFiles).forEach(fileName => {
       formData.append('files',this.uploadedFiles[fileName]) 
       });
@@ -156,13 +157,13 @@ export default class Anime {
       maxFiles: 1,
       paramName: 'image_title',
       // Événement après le téléchargement réussi
-      success: function (file, response) {
+      success:(file, response)=> {
         // Ajouter une classe pour identifier le fichier
         file.previewElement.classList.add("dz-success");
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
         debugger
 
-        that.file_title
+        this.file_title = file
 
       }
     });
@@ -171,8 +172,8 @@ export default class Anime {
       acceptedFiles: "image/*",
       addRemoveLinks: true, // Ajoute les liens de suppression
       maxFiles: 1,
-     resizeHeight:212,
-     resizeWidth:370,
+      resizeHeight:212,
+      resizeWidth:370,
       paramName: 'image_thumb',
       // Événement après le téléchargement réussi
       success: function (file, response) {
@@ -181,7 +182,7 @@ export default class Anime {
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
       
 
-        this.file_title
+        this.file_thumb
 
       }
     });
@@ -193,11 +194,11 @@ export default class Anime {
       addRemoveLinks: true, // Ajoute les liens de suppression
       paramName: "image_gif",
       // Événement après le téléchargement réussi
-      success: function (file, response) {
+      success:(file, response)=> {
         // Ajouter une classe pour identifier le fichier
         file.previewElement.classList.add("dz-success");
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
-        this.file_gif
+        this.file_gif = file
       }
     });
 

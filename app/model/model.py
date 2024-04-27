@@ -5,20 +5,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 Base = declarative_base()
 import enum
 
-class Parent(Base):
-    __tablename__ = 'parents'
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    # La relation un-à-plusieurs est définie ici
-    children = relationship("Child", back_populates="parent")
 
-class Child(Base):
-    __tablename__ = 'children'
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    parent_id = Column(Integer, ForeignKey('parents.id'))
-    # La référence à la relation est définie ici
-    parent = relationship("Parent", back_populates="children")
 
 
 class AnimeCategorie(enum.Enum):
