@@ -40,12 +40,6 @@ export default class Anime {
     debugger;
     var selectElement = document.getElementById("chosen-select");
     var selectedValues = Array.from(selectElement.selectedOptions).map(option => option.value)
-    console.log(selectedValues);
-    
-    this.count++;
-    Object.keys(this.uploadedFiles).forEach(fileName => {
-    ('files',this.uploadedFiles[fileName]) 
-    });
     var radioCat = document.querySelector('input[name="categorie"]:checked');
     var title = document.getElementById('title');
     var description = document.getElementById('description');
@@ -62,9 +56,9 @@ export default class Anime {
       });
     formData.append("music",this.file_music)
     formData.append("type",radioCat.value)
-    for( var option of selectedValues){
-    formData.append("genre[]", option);
-  }
+    radioCat.forEach((value, index)=>{
+    formData.append(`genre[${index}]`, value)
+  })
 
     const options = {
       method : "Post",
@@ -91,24 +85,7 @@ export default class Anime {
     console.log(`File added: ${file.name}, size: ${file.size}`);
 }
 
-  onSubmit() {
-    const formData = new FormData();
-    formData.append('image', file);
-    formData.append("image_title", this.file_title);
-    formData.append("music",this.file_music)
-    
 
-    const options = {
-      method: 'POST',
-      body: formData // Utilisez l'objet FormData comme corps de la requête
-    };
-    fetch('/create', options)
-      .then(data => console.log("sucess anime create", data))
-      .catch(error => console.log('james nothing compile', error))
-
-
-
-  }
   inputSelect() {
     new MultiSelectTag('chosen-select')
   }

@@ -24,12 +24,10 @@ Anime.metadata.bind = engine
 Genre.metadata.bind = engine
 AnimeGenre.metadata.bind = engine
 
-Parent.metadata.bind = engine
-Child.metadata.bind = engine
+
 # # # Créez les tables dans la base de données
 Anime.metadata.create_all(engine)
-Parent.metadata.create_all(engine)
-Child.metadata.create_all(engine)
+
 # # # # # Créez les tables dans la base de données
 Media.metadata.create_all(engine)
 Genre.metadata.create_all(engine)
@@ -40,11 +38,13 @@ def createAnime():
    
     session = db.get_session()
     if request:
-        
         categorie_enum = AnimeCategorie[request.form.get('type')]
-        new_anime = Anime(title = request.form.get('title') , description = request.form.get('description'), categorie = categorie_enum  )
-        session.add(new_anime)
-        session.commit()
+        if 'vedette' in request.form.get('type'):
+            nombre_vedette = session.query(Anime).filter(Anime.categorie == 'Vedette').count()
+            if nombre_vedette < 1:
+                new_anime = Anime(title = request.form.get('title') , description = request.form.get('description'), categorie = categorie_enum  )
+                session.add(new_anime)
+                session.commit()
     for key, path in file_paths.items():
         if key in request.files:
             file = request.files[key]
