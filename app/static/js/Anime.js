@@ -8,6 +8,7 @@ export default class Anime {
   constructor() {
     console.log("Anime init ")
     // this.initDropZone();
+    this.radios = document.querySelectorAll('input[name="categorie"]');
     this.list = document.querySelectorAll(".navigation li");
     this.toggle = document.querySelector(".toggle");
     this.navigation = document.querySelector(".navigation");
@@ -20,6 +21,7 @@ export default class Anime {
     this.initDropZone();
     this.file_title = null;
     this.file_music;
+    this.file_hero ;
     this.file_gif = null;
     this.file_bottom = null;
     this.file_thumb = null;
@@ -27,7 +29,43 @@ export default class Anime {
     this.getMultiSelecte();
     this.uploadedFiles = {};
     this.onFileUploadSuccess(this);
-    this.count = 1;
+    this.action();
+  }
+  action(){
+debugger;
+console.log(this.radios)
+
+  this.radios.forEach(radio=>{
+
+    radio.addEventListener('change',function(){
+      console.log(this.value)
+      if (this.value == "recommended"){
+      document.getElementsByClassName('drop__image_bottom')[0].style.display = "block";
+      document.getElementsByClassName('drop__image_title')[0].style.display = "block";
+      document.getElementsByClassName('drop__music')[0].style.display = "block";
+      document.getElementsByClassName('drop__image_gif')[0].style.display = "block";
+      
+      }
+      if(this.value =="regular"){
+        document.getElementsByClassName('drop__image_bottom')[0].style.display = "none";
+        document.getElementsByClassName('drop__image_title')[0].style.display = "none";
+        document.getElementsByClassName('drop__music')[0].style.display = "none";
+        document.getElementsByClassName('drop__image_gif')[0].style.display = "none";
+        document.getElementsByClassName('drop__image_hero')[0].style.display = "none";
+      }
+      if(this.value =="vedette"){
+        document.getElementsByClassName('drop__image_bottom')[0].style.display = "none";
+        document.getElementsByClassName('drop__image_title')[0].style.display = "none";
+        document.getElementsByClassName('drop__music')[0].style.display = "none";
+        document.getElementsByClassName('drop__image_gif')[0].style.display = "block";
+        document.getElementsByClassName('drop__image_hero')[0].style.display = "block";
+      }
+    })
+  })
+  
+  
+
+
   }
   getMultiSelecte() {
     var selectElement = document.getElementById("chosen-select");
@@ -37,7 +75,7 @@ export default class Anime {
   // add hovered class to selected list item
   onSend(event){
     event.preventDefault();
-    debugger;
+   
     var selectElement = document.getElementById("chosen-select");
     var selectedValues = Array.from(selectElement.selectedOptions).map(option => option.value)
     var radioCat = document.querySelector('input[name="categorie"]:checked');
@@ -91,7 +129,6 @@ export default class Anime {
   }
 
   activeLink() {
-
     this.list.forEach((item) => {
       item.classList.remove("hovered");
     });
@@ -102,7 +139,6 @@ export default class Anime {
   }
 
   // Menu Toggle
-
   toggleClass() {
     let main = document.querySelector(".main");
 
@@ -115,14 +151,6 @@ export default class Anime {
 
   initDropZone() {
     // Dropzone for Images
-    // var imageDropzone = new Dropzone("#imageDropzone", { acceptedFiles: 'image/*' });
-
-    // // Dropzone for Videos
-    // var videoDropzone = new Dropzone("#videoDropzone", { acceptedFiles: 'video/*' });
-
-    // // Dropzone for Music
-    // var musicDropzone = new Dropzone("#musicDropzone", { acceptedFiles: 'audio/*' });
-
     const output = document.querySelector("#output");
 
     Dropzone.autoDiscover = false;
@@ -176,6 +204,19 @@ export default class Anime {
         file.previewElement.classList.add("dz-success");
         output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
         this.file_gif = file
+      }
+    });
+    var myDropzoneGif = new Dropzone("#HeroDropzone", {
+      url: '/upload',
+      acceptedFiles: 'image',
+      addRemoveLinks: true, // Ajoute les liens de suppression
+      paramName: "image",
+      // Événement après le téléchargement réussi
+      success:(file, response)=> {
+        // Ajouter une classe pour identifier le fichier
+        file.previewElement.classList.add("dz-success");
+        output.innerHTML += `<div>File added: ${file.name} size:${file.size}  </div>`;
+        this.file_hero = file
       }
     });
 

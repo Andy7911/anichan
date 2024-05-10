@@ -12,6 +12,8 @@ class AnimeCategorie(enum.Enum):
     vedette = 'vedette'
     regular = 'regular'
     recommended = 'recommended'
+    new_realese = "new_realease"
+    coming_soon = "coming_soon"
    
 
 class Anime(Base):

@@ -50,6 +50,7 @@
         margin-bottom: 20px;
     }
     .dropzone {
+      
         margin-bottom: 30px;
         border: 1px dotted black;
         .dz-message {
@@ -69,6 +70,7 @@
             display: flex;
             width: 100%;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         &__custom {
             width: 33%;
@@ -122,6 +124,23 @@
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+    }
+    .drop{
+        &__image_title{
+            display: none;
+        }
+        &__image_bottom{
+            display: none;
+        }
+        &__image_gif{
+            display: none;
+        }
+        &__music{
+            display: none;
+        }
+        &__image_hero{
+            display: none;
         }
     }
 }

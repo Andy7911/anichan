@@ -11,7 +11,8 @@ class ImageType(enum.Enum):
     imageTitle = 'imageTitle'
     imageBottom = 'imageBottom'
     thumbnail = "thumbnail"
-    manga = " manga"
+    manga = "manga"
+    heroImage = "heroImage"
 
 
 # Déclarer la classe de base pour les modèles

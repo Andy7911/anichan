@@ -72,15 +72,37 @@ import swiper from 'swiper';
         console.log('Module Anime initialized'); 
         this.thumbnail = document.getElementsByClassName("animes__thumbnail");  
          this.audio = document.getElementsByClassName("animes__audioPlayer");
-         
-
+         this.hoverArea = document.getElementById('hover-area');
+         this.music = document.getElementById('background-music');
+  this.action()
         this.populateThumb()  
         this.initThumb()
         this.startbanner()
      this.removeBanner()
         console.log('audio',audio)
-     
+   
         
+    }
+    action(){
+        debugger;
+        this.hoverArea.addEventListener('mouseenter',()=> {
+            console.log('mouse over')
+   
+            this.music.volume = 0.35;
+            this.music.play();
+            this.music.loop = true
+     
+        });
+    
+        this.hoverArea.addEventListener('mouseleave',()=> {
+            debugger;
+            console.log('mouse out')
+            setTimeout(()=> {
+                this.music.pause();
+                this.music.currentTime = 0;
+            }, 500);
+             // Optionnel, réinitialise la musique au début
+        });
     }
     // Peupler les images thumbnail de chaque anime
     populateThumb() {

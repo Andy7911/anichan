@@ -45,7 +45,7 @@
                         <li>
                             <a href="#">
                                 <span class="icon">
-                                    <img src="../static/img/Anime-world-forumg.png" width="75"  height="75" srcset="">
+                                    <img src="../static/img/Anime-world-forumg.png" width="60"  height="60" srcset="">
                                 </span>
                                 <span class="title">Anichan</span>
                             </a>
@@ -135,7 +135,12 @@
                             <img src="assets/imgs/customer01.jpg" alt="">
                         </div>
                     </div>
-                {% block content %}{% endblock %}
+
+                {% block hero %}{% endblock %}
+                {% block content %}
+                {% block card %}{% endblock %}
+
+                {% endblock %}
             </div>
             </div>
 

@@ -4,7 +4,8 @@
 <main class="home-page">
     
     <div class="container">
-        <div class="hero">
+
+        <div class="hero" id="hover-area">
             <div class="hero__left">
                 <h4 class="hero__title"> S1 | 26 Episodes </h4>
                 <h2>Demon Slayer Kimetsu NO Yaiba </h2>
@@ -42,14 +43,24 @@
     
                 </div> -->
                 
-                <div class="hero__img_wrap">
+                <div   class="hero__img_wrap">
                     <img class="hero__img" src="../static/img/rengoku.webp"/>
                     <img class="hero__gif" src="../static/img/demon-slayer-gif-converter.gif" alt="" srcset="">
-    
+                    <audio id="background-music"  src="../static/img/music/demon-slayer-rengoku.MP3"></audio>
+
                 </div>
                
             </div>
         </div>
+        
+               <!-- Anime recommendé -->
+               <h2>Sélection recommandée</h2>
+               <div class="animes">
+               </div>
+               <div class="banner">
+
+               </div>
+            <!-- Anime recommendé Fin -->
         <h2> last release</h2>
         <div class="last_anime">
             <a  href="#" class="thumbnail">
@@ -82,14 +93,9 @@
                 <div class="thumbnail">
                 <img src="https://picsum.photos/441/252" alt srcset></div>
         </div>
-        <h2>Sélection recommandée</h2>
-        <div class="animes">
-        </div>
-        <div class="banner">
-
-        </div>
+ 
     </div>
-    <div class="app"></div>
+   
 </main>
 
 {% endblock %}

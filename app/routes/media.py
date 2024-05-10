@@ -42,9 +42,10 @@ def createAnime():
         if 'vedette' in request.form.get('type'):
             nombre_vedette = session.query(Anime).filter(Anime.categorie == 'Vedette').count()
             if nombre_vedette < 1:
-                new_anime = Anime(title = request.form.get('title') , description = request.form.get('description'), categorie = categorie_enum  )
-                session.add(new_anime)
-                session.commit()
+                return "Limit reach of vedette"
+        new_anime = Anime(title = request.form.get('title') , description = request.form.get('description'), categorie = categorie_enum  )
+        session.add(new_anime)
+        session.commit()
     for key, path in file_paths.items():
         if key in request.files:
             file = request.files[key]
