@@ -1,0 +1,33 @@
+.input-base {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+  height: 50px;
+}
+.input-base::-webkit-input-placeholder {
+  font-size: 20px;
+  line-height: 3;
+}
+.input-base:focus {
+  border-color: blue;
+}
+
+.input-error {
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+  height: 50px;
+}
+.input-error::-webkit-input-placeholder {
+  font-size: 20px;
+  line-height: 3;
+}
+.input-error:focus {
+  border-color: blue;
+}/*# sourceMappingURL=input.css.map */

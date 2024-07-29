@@ -1,0 +1,64 @@
+.episode h2 {
+  margin-bottom: 20px;
+}
+.episode .content {
+  padding-bottom: 20px;
+  display: flex;
+}
+.episode .content__left {
+  width: 50%;
+  padding-right: 10px;
+}
+.episode .content__right {
+  width: 50%;
+  padding-left: 10px;
+}
+.episode .mult-select-tag {
+  margin-bottom: 20px;
+}
+.episode__dynamique_input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 50px;
+}
+.episode__dynamique_input h2 {
+  margin-bottom: 20px;
+}
+.episode__input_add {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  font-size: 30px;
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.episode .input__left {
+  width: 50%;
+  padding: 10px;
+}
+.episode .input__right {
+  width: 50%;
+  padding: 10px;
+}
+.episode .form {
+  padding: 20px;
+}
+.episode .dropzone {
+  margin-bottom: 30px;
+  border: 1px dotted black;
+}
+.episode .dropzone .dz-message span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.episode .dropzone__thumbnail {
+  min-height: 250px;
+}/*# sourceMappingURL=add-episode.css.map */

@@ -1,101 +1,485 @@
-
-{% extends 'layout.html' %}
-{% block content %}
+{% extends 'layout.html' %} {% block content %}
 <main class="home-page">
-    
-    <div class="container">
+  <div class="container">
+    <div class="main__content">
+      <div class="hero" id="hover-area">
+        <div class="hero__left">
+          <h4 id="hero__left" class="hero__title">S1 | 26 Episodes</h4>
+          <h2>Demon Slayer Kimetsu NO Yaiba</h2>
+          <div class="hero__classification">
+            <span class="hero__tag"> Animation </span>
+            <span class="hero__tag"> Action </span>
+            <span class="hero__tag"> Adventure </span>
+          </div>
+          <div  id="hero__stars" class="hero__stars">
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
 
-        <div class="hero" id="hover-area">
-            <div class="hero__left">
-                <h4 class="hero__title"> S1 | 26 Episodes </h4>
-                <h2>Demon Slayer Kimetsu NO Yaiba </h2>
-                <div class="hero__classification">
-                    <span class="hero__tag">
-                        Animation
-                    </span>
-                    <span class="hero__tag">
-                        Action
-                    </span>
-                    <span class="hero__tag">
-                        Adventure
-                    </span>
-                    
-                </div>
-                <div class="hero__stars">
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star" ></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star" ></i>
-
-                    <i class="fa-regular fa-star" ></i>
-                    <strong>4.0</strong>
-                </div>
-                <p>
-                    L'histoire suit le périple de Kamado Tanjirō qui cherche un moyen de rendre sa petite sœur Nezuko de nouveau humaine après sa transformation en démon.
-                </p>
-                <div class="hero__btn_wrapper">
-                    <a class="btn" href="#">Watch <i class="fa-solid fa-play"></i></a>
-                    <a  class="btn" href="#">Add to Watching <i class="fa-solid fa-plus-minus"></i> </a>
-                </div>
-            </div>
-            <div class="hero__right">
-                <!-- <div class="hero__rectangle">
+            <i class="fa-regular fa-star"></i>
+            <strong>4.0</strong>
+          </div>
+          <p>
+            L'histoire suit le périple de Kamado Tanjirō qui cherche un moyen de
+            rendre sa petite sœur Nezuko de nouveau humaine après sa
+            transformation en démon.
+          </p>
+          <div class="hero__btn_wrapper">
+            <a class="btn" href="#">Watch <i class="fa-solid fa-play"></i></a>
+            <a class="btn" href="#"
+              >Add to Watching <i class="fa-solid fa-plus-minus"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero__right">
+          <!-- <div class="hero__rectangle">
     
                 </div> -->
-                
-                <div   class="hero__img_wrap">
-                    <img class="hero__img" src="../static/img/rengoku.webp"/>
-                    <img class="hero__gif" src="../static/img/demon-slayer-gif-converter.gif" alt="" srcset="">
-                    <audio id="background-music"  src="../static/img/music/demon-slayer-rengoku.MP3"></audio>
 
-                </div>
-               
-            </div>
+          <div class="hero__img_wrap">
+            <img class="hero__img" src="../static/img/rengoku.webp" />
+            <img
+              class="hero__gif"
+              src="../static/img/demon-slayer-gif-converter.gif"
+              alt=""
+              srcset=""
+            />
+            <audio loop
+              id="background-music"
+              src="../static/img/music/demon-slayer-rengoku.MP3"
+            ></audio>
+          </div>
         </div>
-        
-               <!-- Anime recommendé -->
-               <h2>Sélection recommandée</h2>
-               <div class="animes">
-               </div>
-               <div class="banner">
+      </div>
 
-               </div>
-            <!-- Anime recommendé Fin -->
-        <h2> last release</h2>
-        <div class="last_anime">
-            <a  href="#" class="thumbnail">
-            <img src="../static/img/DMH.png" alt="effdf" loading="lazy">
-            <span class="thumbnail__tag">
-                Episode 6
-            </span>
-            </a>
-            <a href="/watch" class="thumbnail">
-            <img src="../static/img/Demon-Slave.png" alt="img-01" loading="lazy">
-            <span class="thumbnail__tag">
-                Episode 9
-            </span>
-            </a>
-            <a class="thumbnail">
-            <img src="../static/img/solo-levelling.jpeg" alt="solo-levelling" loading="lazy">  <span class="thumbnail__tag">
-                Episode 8
-            </span>
+      <!-- Anime recommendé -->
+      <h2>Sélection recommandée</h2>
+      <div class="animes"></div>
+      <div class="banner"></div>
+      <!-- Anime recommendé Fin -->
+      <h2>last release</h2>
+      <div class="last_anime">
+        <a href="#" class="thumbnail">
+          <img src="../static/img/DMH.png" alt="effdf" loading="lazy" />
+          <span class="thumbnail__tag"> Episode 6 </span>
         </a>
-          
+        <a href="/watch" class="thumbnail">
+          <img
+            src="../static/img/Demon-Slave.png"
+            alt="img-01"
+            loading="lazy"
+          />
+          <span class="thumbnail__tag"> Episode 9 </span>
+        </a>
+        <a href="/watch" class="thumbnail">
+            <img
+              src="../static/img/Demon-Slave.png"
+              alt="img-01"
+              loading="lazy"
+            />
+            <span class="thumbnail__tag"> Episode 9 </span>
+          </a>
+        <a class="thumbnail">
+          <img
+            src="../static/img/solo-levelling.jpeg"
+            alt="solo-levelling"
+            loading="lazy"
+          />
+          <span class="thumbnail__tag"> Episode 8 </span>
+        </a>
+      </div>
+      <h2>Vos visionnement</h2>
+      <div class="viewings">
+        <div class="thumbnail">
+          <img src="../static/img/key_art_fullmetal_alchemist.png" alt srcset />
         </div>
-        <h2> Vos visionnement</h2>
-        <div class="viewings">
-            <div class="thumbnail">
-                <img src="../static/img/key_art_fullmetal_alchemist.png" alt srcset>
-                </div>
-                <div class="thumbnail">
-                <img src="https://picsum.photos/441/252" alt srcset>
-                </div>
-                <div class="thumbnail">
-                <img src="https://picsum.photos/441/252" alt srcset></div>
+        <div class="thumbnail">
+          <img src="https://picsum.photos/441/252" alt srcset />
         </div>
- 
+        <div class="thumbnail">
+          <img src="https://picsum.photos/441/252" alt srcset />
+        </div>
+        <div class="thumbnail">
+            <img src="https://picsum.photos/441/252" alt srcset />
+          </div>
+      </div>
+
+      <div class="schedule">
+        <h3>Estimated schedule</h3>
+        <div id="schedule__date" class="schedule__date"></div>
+
+        <div class="schedule__content">
+          <div class="schedule__swiper">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>Mon</h3>
+                  <span>Juil 25</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>THU</h3>
+                  <span>Juil 25</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>TUR</h3>
+                  <span>Juil 28</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>WES</h3>
+                  <span>Juil 28</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>THU</h3>
+                  <span>Juil 28</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>THU</h3>
+                  <span>Juil 28</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>THU</h3>
+                  <span>Juil 28</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="schedule__card">
+                  <h3>THU</h3>
+                  <span>Juil 28</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="schedule__btn swiper-button-prev"></div>
+            <div class="schedule__btn swiper-button-next"></div>
+          </div>
+        </div>
+
+        <div class="schedule__broadcast">
+          <div class="schedule__broadcast-card">
+            <div class="schedule__broadcast-text">
+              <span class="schedule__broadcast-hour">02:00</span>
+              <span> Code geass</span>
+            </div>
+            <span class="schedule__broadcast-episode">Episode 3</span>
+          </div>
+          <div class="schedule__broadcast-card">
+            <div class="schedule__broadcast-text">
+              <span class="schedule__broadcast-hour">02:00</span>
+              <span> Code geass</span>
+            </div>
+            <span class="schedule__broadcast-episode">Episode 3</span>
+          </div>
+          <div class="schedule__broadcast-card">
+            <div class="schedule__broadcast-text">
+              <span class="schedule__broadcast-hour">16:00</span>
+              <span> Naruto </span>
+            </div>
+            <a href="#">
+            <span class="schedule__broadcast-episode">Episode 5</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-   
+    <div class="main__side">
+      <div class="filter">
+        <h4>Quick filter</h4>
+        <div class="filter__content">
+          <div class="filter__item">
+            <div class="filter__dropdown" data-toggle="dropdown">
+              Genre <span>All </span>
+            </div>
+          </div>
+          <div class="filter__item">
+            <div class="filter__dropdown" data-toggle="dropdown">
+              Country <span> All</span>
+            </div>
+            <div class="filter__dropdown_menu">
+                <ul>
+                  <li id="genre-1">
+                    <div class="filter__check">
+                      <input
+                        type="checkbox"
+                        placeholder="comedy"
+                        id="input-genre-1"
+                      />
+                      <label for="input-genre-1" id="input-genre-1">
+                        Comedy</label
+                      >
+                    </div>
+                  </li>
+                  <li id="genre-2">
+                    <div class="filter__check">
+                      <input
+                        type="checkbox"
+                        placeholder="horror"
+                        id="input-genre-2"
+                      />
+                      <label for="input-genre-2" id="input-genre-2">
+                        Horror</label
+                      >
+                    </div>
+                  </li>
+                  <li id="genre-3">
+                    <div class="filter__check">
+                      <input
+                        type="checkbox"
+                        placeholder="Mecha"
+                        id="input-genre-3"
+                      />
+                      <label for="input-genre-3" id="input-genre-3"> Mecha</label>
+                    </div>
+                  </li>
+                  <li id="genre-4">
+                    <div class="filter__check">
+                      <input
+                        type="checkbox"
+                        placeholder="josei"
+                        id="input-genre-4"
+                      />
+                      <label for="input-genre-4" id="input-genre-4"> Josei</label>
+                    </div>
+                  </li>
+                  <li id="genre-5">
+                    <div class="filter__check">
+                      <input
+                        type="checkbox"
+                        placeholder="Mecha"
+                        id="input-genre-5"
+                      />
+                      <label for="input-genre-5" id="input-genre-5"> Drama</label>
+                    </div>
+                  </li>
+                  <li id="genre-6">
+                    <div class="filter__check">
+                      <input
+                        type="checkbox"
+                        placeholder="music"
+                        id="input-genre-6"
+                      />
+                      <label for="input-genre-6" id="input-genre-6"> Music</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+          </div>
+          <div class="filter__item">
+            <div class="filter__dropdown">season <span>All</span></div>
+          </div>
+          <div class="filter__item">
+            <div class="filter__dropdown">
+              Year
+              <span>All</span>
+            </div>
+            <div class="filter__dropdown_menu">
+              <ul>
+                <li id="genre-1">
+                  <div class="filter__check">
+                    <input
+                      type="checkbox"
+                      placeholder="comedy"
+                      id="input-genre-1"
+                    />
+                    <label for="input-genre-1" id="input-genre-1">
+                      Comedy</label
+                    >
+                  </div>
+                </li>
+                <li id="genre-2">
+                  <div class="filter__check">
+                    <input
+                      type="checkbox"
+                      placeholder="horror"
+                      id="input-genre-2"
+                    />
+                    <label for="input-genre-2" id="input-genre-2">
+                      Horror</label
+                    >
+                  </div>
+                </li>
+                <li id="genre-3">
+                  <div class="filter__check">
+                    <input
+                      type="checkbox"
+                      placeholder="Mecha"
+                      id="input-genre-3"
+                    />
+                    <label for="input-genre-3" id="input-genre-3"> Mecha</label>
+                  </div>
+                </li>
+                <li id="genre-4">
+                  <div class="filter__check">
+                    <input
+                      type="checkbox"
+                      placeholder="josei"
+                      id="input-genre-4"
+                    />
+                    <label for="input-genre-4" id="input-genre-4"> Josei</label>
+                  </div>
+                </li>
+                <li id="genre-5">
+                  <div class="filter__check">
+                    <input
+                      type="checkbox"
+                      placeholder="Mecha"
+                      id="input-genre-5"
+                    />
+                    <label for="input-genre-5" id="input-genre-5"> Drama</label>
+                  </div>
+                </li>
+                <li id="genre-6">
+                  <div class="filter__check">
+                    <input
+                      type="checkbox"
+                      placeholder="music"
+                      id="input-genre-6"
+                    />
+                    <label for="input-genre-6" id="input-genre-6"> Music</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="filter__btn">
+          <span>Filter</span>
+          <ion-icon class="icon" name="checkmark-circle"></ion-icon>
+        </div>
+      </div>
+
+      <div class="top_anime">
+        <div class="top_anme_menu">
+          <ul class="top_anime_nav">
+            <li>
+              <a href="#today">Today</a>
+            </li>
+
+            <li>
+              <a href="#week">Week</a>
+            </li>
+            <li>
+              <a href="#month">Month</a>
+            </li>
+          </ul>
+        </div>
+        <div class="top_anime__photo">
+          <img
+            src="https://t4.ftcdn.net/jpg/06/22/22/17/360_F_622221708_Gg16ZdaNSixeaIORq9MuuT4w9VWTkYw4.jpg"
+            alt="photo anime top"
+            width="300px"
+            height="250"
+          />
+          <div class="top_anime__text">
+            <span>1</span>
+            <div>
+              <h4>The new hero of grave</h4>
+              <div class="top_anime__icon">
+                <ion-icon size="small" class="icon" name="eye"></ion-icon>
+                <span>70 000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="top_anime__content">
+          <div class="top_anime__card">
+            <span class="top_anime__number"> 2 </span>
+            <div class="top_anime__thumbnail">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8yxvQbNrR8IipdIQfdAg1yYr5CpkDaULKe7cL8Mu4PwXQn9_713L7Up2puWEl_q0MZU&usqp=CAU"
+                alt="book anime"
+                width="40"
+                height="70"
+              />
+            </div>
+            <div class="top_anime__view">
+              <h4>Magami osaga</h4>
+              <div class="top_anime__icon">
+                <ion-icon size="small" class="icon" name="eye"></ion-icon>
+                <span>70 000</span>
+              </div>
+            </div>
+          </div>
+          <div class="top_anime__card">
+            <span class="top_anime__number"> 3</span>
+            <div class="top_anime__thumbnail">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8yxvQbNrR8IipdIQfdAg1yYr5CpkDaULKe7cL8Mu4PwXQn9_713L7Up2puWEl_q0MZU&usqp=CAU"
+                alt="book anime"
+                width="40"
+                height="70"
+              />
+            </div>
+            <div class="top_anime__view">
+              <h4>Magami osaga</h4>
+              <div class="top_anime__icon">
+                <ion-icon size="small" class="icon" name="eye"></ion-icon>
+                <span>70 000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recently">
+        <div class="recently__top">
+          <h4>Recently Added</h4>
+          <a href="#view">View all</a>
+        </div>
+        <div class="recently__content">
+            <div class="recently__card">
+                <img src="https://64.media.tumblr.com/c9a6e9a6c8ba697f97b909ee59a508b1/tumblr_p7taf5vQkp1rovzi7o1_1280.jpg"
+                 alt="photo cover" width="30"
+                 height="50">
+
+                <div class="recently__text">
+                    <span>Ogarani senpai </span>
+                    <span> 2024 . Ep 12/12 </span>
+
+                </div>
+
+            </div>
+            <div class="recently__card">
+                <img src="https://64.media.tumblr.com/c9a6e9a6c8ba697f97b909ee59a508b1/tumblr_p7taf5vQkp1rovzi7o1_1280.jpg"
+                 alt="photo cover" width="30"
+                 height="50">
+
+                <div class="recently__text">
+                    <span>Ogarani senpai </span>
+                    <span> 2024 . Ep 12/12 </span>
+
+                </div>
+
+            </div>
+            <div class="recently__card">
+                <img src="https://64.media.tumblr.com/c9a6e9a6c8ba697f97b909ee59a508b1/tumblr_p7taf5vQkp1rovzi7o1_1280.jpg"
+                 alt="photo cover" width="30"
+                 height="50">
+
+                <div class="recently__text">
+                    <span>Ogarani senpai </span>
+                    <span> 2024 . Ep 12/12 </span>
+
+                </div>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 {% endblock %}
