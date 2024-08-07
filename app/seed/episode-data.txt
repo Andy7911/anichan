@@ -1,0 +1,5 @@
+id:1|title:Episode 1|season:1|nb_episode:1|release_date:2007-03-11|anime_id:1
+id:2|title:Episode 2|season:1|nb_episode:2|release_date:2007-03-11|anime_id:1
+id:3|title:Episode 1|season:1|nb_episode:1|release_date:2019-04-17|anime_id:2
+id:4|title:episode 2|season:1|nb_episode:2|release_date:2019-04-24|anime_id:2
+id:5|title:episode 1|season:1|nb_episode:2|release_date:2024-04-01|anime_id:3   

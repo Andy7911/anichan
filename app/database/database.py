@@ -1,4 +1,3 @@
-import psycopg2
 from psycopg2 import OperationalError
 import os
 from sqlalchemy import create_engine
@@ -18,7 +17,7 @@ class Database:
     def connect(self):
         try:
 
-            self.engine = create_engine('postgresql://postgres:anichan123@localhost:5432/anichan')
+            self.engine = create_engine('postgresql://postgres:poisson7911@localhost:5432/anichan')
         # Créer une Session pour interagir avec la base de données
             self.Session = sessionmaker(bind=self.engine)
         # Créer une base pour les modèles SQLAlchemy

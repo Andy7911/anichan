@@ -80,7 +80,7 @@ var data = [{
     "text": "La cité entoure un étrange et immense gouffre, communément appelé « l’Abysse ». L’Abysse recèle des artefacts et des vestiges d’une ancienne civilisation disparue, et est de fait un lieu prisé par les caverniers pour l’excavation de ces objets pouvant être vendus à l’étranger.",
     "image_gif": "../static/img/RickandMorty.gif",
     'audio': '../static/img/rick.mp3',
-    "image_buttom": "../static/img/",
+    "image_buttom": "../static/img/evil-james.png",
 
 
 },
@@ -103,6 +103,7 @@ export default class HomePage {
         this.toggleDropmenu()
         this.swiperDate();
         this.liveHours();
+        this.startShow();
         setInterval(this.liveHours, 1000);
         this.fadeInVolume()
         this.thumbnail = document.getElementsByClassName("animes__thumbnail");
@@ -128,6 +129,35 @@ export default class HomePage {
         hoursDiv.textContent = `${timezoneOffset} ${timeZone} `
 
 
+    }
+    startShow(){
+
+    
+        gsap.fromTo('.fa-sharp',{
+
+            opacity:0,
+            left:'-4px'
+
+        },{
+            opacity:1,
+             left:'0px',
+            duration:4,
+
+            ease:"bounce",
+            stagger:{
+                each:0.1
+            },
+            scrollTrigger:{
+            trigger: '#hover-area',
+            start: 'top 5%',
+            end: 'bottom 55%',
+            markers: true,
+            scrub:true
+            }
+
+        }
+    
+    )
     }
 
     swiperDate() {
@@ -170,7 +200,7 @@ export default class HomePage {
 
         const hero_gif = document.getElementsByClassName('hero__gif')[0]
         const src = hero_gif.src
-        debugger
+      
         const hero_img = document.getElementsByClassName('hero__img')[0];
         ScrollTrigger.create({
             trigger: '#hover-area',
@@ -210,7 +240,7 @@ export default class HomePage {
                 hero_img.style.display = 'block'
 
             },
-            markers: true
+            
 
         }
 
@@ -271,14 +301,18 @@ export default class HomePage {
         banner.innerHTML += `<div class="banner__inside">
             <img class="banner__icon_close" loading="lazy"
                 src="../static/img/cross-logo.png">
+                <div class="banner__img_content">
             <img class="banner__img_title" loading="lazy"
                 src="${data[i].title_img}"
                 width="300" />
+                </div>
+                <div class="banner__content_text">
             <p>${data[i].text}.</p>
+            </div>
             <div class="banner__bottom">
             <img class="banner__img_bottom" width="200" loading="lazy"
                 src="${data[i].image_buttom}"> 
-                <a class="btn" href="/synopsis"> Visionnement <span class="btn__icon"><img src="../static/img/118620_play_icon.png" loading="lazy" / ></span> </a>
+                <a class="btn" href="/synopsis"> Visionnement  <span class="btn__icon"><i class="fa-solid fa-play"></i></span> </a>
                 </div>
                
         </div>`
@@ -337,7 +371,7 @@ export default class HomePage {
 
             element.addEventListener('click',function(){
             var sibling = element.nextElementSibling;
-            debugger;
+         
             sibling.classList.toggle('active')
             })
 

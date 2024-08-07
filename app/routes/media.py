@@ -1,14 +1,12 @@
 from flask import request,Blueprint,Flask
-from model.genre import Genre
-from model.animeGenre import  AnimeGenre 
-from model.model import Anime,AnimeCategorie, Media ,ImageType
+from model.model import Anime,AnimeCategorie, Media ,ImageType ,Genre ,Base as modelAnime
 from sqlalchemy.orm import sessionmaker
 from config import Config , file_paths
 # from database.db_connect import get_session, get_engine
 from database.database import Database
 import os;
-
-
+import csv
+from datetime import datetime
 db = Database()
 
 Base = db.Base()
@@ -18,20 +16,10 @@ app = Flask('__name__')
 
 mediaRoute = Blueprint("mediaRoute",__name__)
 engine = db.get_engine()
-# # Lier le modèle à la base de données
-Media.metadata.bind = engine
-Anime.metadata.bind = engine
-Genre.metadata.bind = engine
-AnimeGenre.metadata.bind = engine
-
 
 # # # Créez les tables dans la base de données
-Anime.metadata.create_all(engine)
+modelAnime.metadata.create_all(engine)
 
-# # # # # Créez les tables dans la base de données
-Media.metadata.create_all(engine)
-Genre.metadata.create_all(engine)
-AnimeGenre.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 @mediaRoute.route('/api/createAnime',methods=['POST'])
 def createAnime():
@@ -73,7 +61,7 @@ def createAnime():
 def upload():
 
  for key, path in file_paths.items():
-        if key in request.files:
+        if key in request.files:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
             file = request.files[key]
             # Assurez-vous que le fichier a un nom non vide
             if file.filename == '':
@@ -81,6 +69,7 @@ def upload():
             file_path = os.path.join(path, file.filename)
             file.save(file_path)
  return "File uploaded successfully!"
+
        
 
 @mediaRoute.route('/delete',methods=['POST'])
@@ -102,8 +91,6 @@ def delete():
 
 
 #     return 'sucesss'
-
-
 @mediaRoute.route("/test",methods=['POST'])
 def test():
 
