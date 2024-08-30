@@ -24,6 +24,7 @@ class Anime(Base):
    medias = relationship("Media", back_populates="anime")
    episodes = relationship("Episode", back_populates="anime")
    schedules = relationship("Schedule", back_populates="anime")
+   genres = relationship('Genre', secondary='anime_genres', back_populates='animes')
 
 
 class ImageType(enum.Enum):
@@ -33,6 +34,7 @@ class ImageType(enum.Enum):
     imageBottom = 'imageBottom'
     thumbnail = "thumbnail"
     manga = "manga"
+    image = "image"
     
 class LanguagesType(enum.Enum):
     VF = 'VF'
@@ -63,8 +65,8 @@ class Media(Base):
     size = Column(Integer, nullable=True)
     type = Column(Enum(ImageType),nullable=True)
     extension = Column(String(10), nullable=False) 
-    anime_id = Column(Integer,ForeignKey('animes.id')) 
-    episode_id = Column(Integer,ForeignKey('episodes.id')) 
+    anime_id = Column(Integer,ForeignKey('animes.id'),nullable=True) 
+    episode_id = Column(Integer,ForeignKey('episodes.id'),nullable=True) 
     anime = relationship("Anime", back_populates="medias", foreign_keys=[anime_id])
     episode = relationship("Episode", back_populates="medias", foreign_keys=[episode_id])
 
@@ -102,7 +104,7 @@ class AnimeGenre(Base):
     __tablename__ = 'anime_genres'
     id = Column(Integer,primary_key=True)
     anime_id = Column(Integer,ForeignKey(Anime.id))
-    id_genre = Column(Integer,ForeignKey(Genre.id))  
+    genre_id = Column(Integer,ForeignKey(Genre.id))  
 
 class LanguageVersion(Base):
     __tablename__ = 'language_versions'
@@ -112,3 +114,5 @@ class LanguageVersion(Base):
     url = Column(JSON)
     episode = relationship('Episode',back_populates='language_versions')
     __table_args__ =(UniqueConstraint( 'episode_id','language',name='_episode_language_uc'),)
+
+Genre.animes = relationship('Anime', secondary='anime_genres', back_populates='genres')

@@ -2,35 +2,37 @@
 <main class="home-page">
   <div class="container">
     <div class="main__content">
+       {% for anime in animes %}
       <div class="hero" id="hover-area">
         <div class="hero__left">
-          <h4 id="hero__left" class="hero__title">S1 | 26 Episodes</h4>
-          <h2>Demon Slayer Kimetsu NO Yaiba</h2>
-          <div class="hero__classification">
-            <span class="hero__tag"> Animation </span>
-            <span class="hero__tag"> Action </span>
-            <span class="hero__tag"> Adventure </span>
-          </div>
-          <div  id="hero__stars" class="hero__stars">
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
+          <pre style="color: aliceblue;">{{ animes}}</pre>
 
-            <i class="fa-regular fa-star"></i>
-            <strong>4.0</strong>
+         
+          <h4 id="hero__left" class="hero__title">S1 | 26 Episodes</h4>
+          <h2>{{anime.anime_name}}</h2>
+          <div class="hero__classification">
+      {%for genre in  anime.genres %}
+            <span class="hero__tag"> {{genre}} </span>
+           
+            {%endfor%}
+      
+          </div>
+          <div   class="hero__stars">
+        <div id="hero__stars">
+
+        </div>
+            <strong id="notation" class="notation">{{anime.notation|float}}</strong>
           </div>
           <p>
-            L'histoire suit le périple de Kamado Tanjirō qui cherche un moyen de
-            rendre sa petite sœur Nezuko de nouveau humaine après sa
-            transformation en démon.
+       {{anime.description}}
           </p>
           <div class="hero__btn_wrapper">
-            <a class="btn" href="#">Watch <i class="fa-solid fa-play"></i></a>
+            <a class="btn" href="/watch/{{anime.anime_id}}">Watch <i class="fa-solid fa-play"></i></a>
             <a class="btn" href="#"
               >Add to Watching <i class="fa-solid fa-plus-minus"></i>
             </a>
           </div>
+          
         </div>
         <div class="hero__right">
           <!-- <div class="hero__rectangle">
@@ -38,20 +40,29 @@
                 </div> -->
 
           <div class="hero__img_wrap">
-            <img class="hero__img" src="../static/img/rengoku.webp" />
+            {%for media in anime.medias %}
+            {%if media.type == 'image'%}
+            <img class="hero__img" src="{{media.filepath}}" />
+            {%endif%}
+            {%if media.type == 'background_gif'%}
             <img
               class="hero__gif"
-              src="../static/img/demon-slayer-gif-converter.gif"
+              src="{{media.filepath}}"
               alt=""
               srcset=""
             />
+            {%endif%}
+            {%if media.type == 'music'%}
             <audio loop
               id="background-music"
-              src="../static/img/music/demon-slayer-rengoku.MP3"
+              src="{{media.filepath}}"
             ></audio>
+            {%endif%}
+            {%endfor%}
           </div>
         </div>
       </div>
+      {% endfor %}
 
       <!-- Anime recommendé -->
       <h2>Sélection recommandée</h2>
@@ -64,7 +75,7 @@
           <img src="../static/img/DMH.png" alt="effdf" loading="lazy" />
           <span class="thumbnail__tag"> Episode 6 </span>
         </a>
-        <a href="/watch" class="thumbnail">
+        <a href="/watch/" class="thumbnail">
           <img
             src="../static/img/Demon-Slave.png"
             alt="img-01"
@@ -90,6 +101,9 @@
         </a>
       </div>
       <h2>Vos visionnement</h2>
+      {% for anime in getVedette %}
+      <li>{{ anime.id }}: {{ anime.title }} - {{ anime.description }}</li>
+  {% endfor %}
       <div class="viewings">
         <div class="thumbnail">
           <img src="../static/img/key_art_fullmetal_alchemist.png" alt srcset />

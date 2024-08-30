@@ -1,2 +1,7 @@
-id:1|filename:demon-slayer-gif-converter|filepath:../static/img/demon-slayer-gif-converter.gif|size:9000000|type:background_gif|anime_id:2|episode_id:null
-id:2|filename:rengoku|filepath:../static/img//img/rengoku.webp|size:9600|type:null|extension:webp|anime_id:2|episode_id:null
+id:1|filename:demon-slayer-gif|filepath:../static/img/demon-slayer-gif-converter.gif|size:900|type:background_gif|extension:gif|anime_id:2|episode_id:null
+id:2|filename:rengoku|filepath:../static/img/img/rengoku.webp|size:9600|type:image|extension:webp|anime_id:2|episode_id:null
+id:3|filename:regoku-ost|filepath:../static/img/music/demon-slayer-rengoku.MP3|size:900|type:music|extension:mp3|anime_id:2|episode_id:null
+id:4|filename:tale-of-zetriya|filepath:../static/img/maxresdefault.jpeg|size:900|type:thumbnail|extension:jpeg|anime_id:10|episode_id:null
+id:5|filename:Claymore|filepath:../static/img/claymore.jpeg|size:200|type:thumbnail|extension:jpeg|anime_id:1|episode_id:null
+id:6|filename:tokyo-revenger-thumb|filepath:../static/img/tokyo-thumb.jpeg|size:322|type:thumbnail|anime_id:5|episode_id:null
+id:7|filename

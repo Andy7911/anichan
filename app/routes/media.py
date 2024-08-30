@@ -100,5 +100,9 @@ def test():
         session.commit()
         print('tentative au mon id apparait:',new_anime.id)
         return "File uploaded successfully!"
-   
+
+# @mediaRoute.route("api/anime",methods=['Post'])
+# def getAnime():
+#     Session = db.get_session()
+    
 

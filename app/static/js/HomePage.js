@@ -100,6 +100,8 @@ export default class HomePage {
 
     constructor() {
         console.log('Module Anime initialized');
+        this.notationStart();
+
         this.toggleDropmenu()
         this.swiperDate();
         this.liveHours();
@@ -120,7 +122,24 @@ export default class HomePage {
 
 
     }
+    notationStart(){
+        var notations = document.getElementById('notation')
+        var containeNotation = document.getElementById('hero__stars')
 
+        var number =   parseInt(notations.textContent);
+        console.log("notation",number)
+        for( var i=0;i<number;i++){
+
+            containeNotation.innerHTML += '<i class="fa-sharp fa-solid fa-star"></i>';
+            
+
+        }
+        for(var a=number; a<5;a++){
+            containeNotation.innerHTML += '<i class="fa-regular fa-star"></i>';
+
+        }
+
+    }
     liveHours() {
         const hoursDiv = document.getElementById('schedule__date')
         const now = new Date();

@@ -1,5 +1,7 @@
-id:1|language:original|url:['https://video.sibnet.ru/shell.php?videoid=4942877','//sendvid.com/embed/fpn02t9j']|episode_id:1
-id:2|language:original|url:['https://video.sibnet.ru/shell.php?videoid=4942880','//sendvid.com/embed/c3jjbiks']|episode_id:2
-id:3|language:original|url:['https://video.sibnet.ru/shell.php?videoid=4668120','//sendvid.com/embed/vmi24hp5']|episode_id:3
-id:4|language:original|url:['https://video.sibnet.ru/shell.php?videoid=4668131','//sendvid.com/embed/164a3rj7']|episode_id:4
-id:5|language:original|url:['https://video.sibnet.ru/shell.php?videoid=5503622','https://video.sibnet.ru/shell.php?videoid=5503622']|episode_id:5
+id:1|language:VO|url:['https://video.sibnet.ru/shell.php?videoid=4942877','//sendvid.com/embed/fpn02t9j']|episode_id:1
+id:2|language:VO|url:['https://video.sibnet.ru/shell.php?videoid=4942880','//sendvid.com/embed/c3jjbiks']|episode_id:2
+id:3|language:VO|url:['https://video.sibnet.ru/shell.php?videoid=4668120','//sendvid.com/embed/vmi24hp5']|episode_id:3
+id:4|language:VO|url:['https://video.sibnet.ru/shell.php?videoid=4668131','//sendvid.com/embed/164a3rj7']|episode_id:4
+id:5|language:VO|url:['https://video.sibnet.ru/shell.php?videoid=5503622','https://video.sibnet.ru/shell.php?videoid=5503622']|episode_id:5
+id:6|language:VO|url:['https://video.sibnet.ru/shell.php?videoid=5510903','//sendvid.com/embed/2ozel6a9']|episode_id:6
+

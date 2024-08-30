@@ -136,12 +136,15 @@
       }
     }
     &__stars {
+      display: flex;
+      align-items: center;
       i {
         color: $secondaryColor;
         font-size: 35px;
       }
       margin-bottom: 20px;
       strong {
+        margin-left: 10px;
         font-size: 40px;
         color: #fff;
         font-family: $oswald;
